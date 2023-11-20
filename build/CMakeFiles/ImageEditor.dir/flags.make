@@ -4,7 +4,9 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/src -I/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/lib -I/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-src -isystem /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-src/include
+CXX_INCLUDES = -I"/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/src" -I"/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/lib" -I"/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src" -isystem "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/sil-src/include"
 
-CXX_FLAGS = -g -std=c++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk
+CXX_FLAGSarm64 = -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+
+CXX_FLAGS = -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
 

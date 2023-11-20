@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation
+CMAKE_SOURCE_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build
+CMAKE_BINARY_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build"
 
 # Include any dependencies generated for this target.
 include _deps/img-build/CMakeFiles/stb_image.dir/depend.make
@@ -72,30 +72,30 @@ include _deps/img-build/CMakeFiles/stb_image.dir/flags.make
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o: _deps/img-build/CMakeFiles/stb_image.dir/flags.make
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o: _deps/img-src/lib/stb_image/stb_image.cpp
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o: _deps/img-build/CMakeFiles/stb_image.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -c /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -MF CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o.d -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -c "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp"
 
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.i"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp > CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.i
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp" > CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.i
 
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.s"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.s
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp" -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.s
 
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o: _deps/img-build/CMakeFiles/stb_image.dir/flags.make
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o: _deps/img-src/lib/stb_image/stb_image_write.cpp
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o: _deps/img-build/CMakeFiles/stb_image.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -MF CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o.d -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -c /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -MF CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o.d -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -c "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp"
 
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.i"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp > CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.i
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp" > CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.i
 
 _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.s"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.s
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp" -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.s
 
 # Object files for target stb_image
 stb_image_OBJECTS = \
@@ -109,19 +109,19 @@ _deps/img-build/libstb_image.a: _deps/img-build/CMakeFiles/stb_image.dir/lib/stb
 _deps/img-build/libstb_image.a: _deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o
 _deps/img-build/libstb_image.a: _deps/img-build/CMakeFiles/stb_image.dir/build.make
 _deps/img-build/libstb_image.a: _deps/img-build/CMakeFiles/stb_image.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libstb_image.a"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && $(CMAKE_COMMAND) -P CMakeFiles/stb_image.dir/cmake_clean_target.cmake
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stb_image.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libstb_image.a"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && $(CMAKE_COMMAND) -P CMakeFiles/stb_image.dir/cmake_clean_target.cmake
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stb_image.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 _deps/img-build/CMakeFiles/stb_image.dir/build: _deps/img-build/libstb_image.a
 .PHONY : _deps/img-build/CMakeFiles/stb_image.dir/build
 
 _deps/img-build/CMakeFiles/stb_image.dir/clean:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && $(CMAKE_COMMAND) -P CMakeFiles/stb_image.dir/cmake_clean.cmake
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && $(CMAKE_COMMAND) -P CMakeFiles/stb_image.dir/cmake_clean.cmake
 .PHONY : _deps/img-build/CMakeFiles/stb_image.dir/clean
 
 _deps/img-build/CMakeFiles/stb_image.dir/depend:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build/CMakeFiles/stb_image.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build/CMakeFiles/stb_image.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : _deps/img-build/CMakeFiles/stb_image.dir/depend
 

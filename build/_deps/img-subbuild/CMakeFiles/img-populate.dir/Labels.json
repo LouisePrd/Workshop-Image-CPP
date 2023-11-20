@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate-complete.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate-complete.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-build.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-build.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-configure.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-configure.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-download.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-download.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-install.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-install.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-mkdir.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-mkdir.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-patch.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-patch.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-test.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-test.rule"
 		},
 		{
-			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-update.rule"
+			"file" : "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-update.rule"
 		}
 	],
 	"target" : 

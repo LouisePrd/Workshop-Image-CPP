@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation
+CMAKE_SOURCE_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build
+CMAKE_BINARY_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build"
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include _deps/glm-build/CMakeFiles/uninstall.dir/compiler_depend.make
 include _deps/glm-build/CMakeFiles/uninstall.dir/progress.make
 
 _deps/glm-build/CMakeFiles/uninstall:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/cmake_uninstall.cmake
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/cmake_uninstall.cmake
 
 uninstall: _deps/glm-build/CMakeFiles/uninstall
 uninstall: _deps/glm-build/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ _deps/glm-build/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : _deps/glm-build/CMakeFiles/uninstall.dir/build
 
 _deps/glm-build/CMakeFiles/uninstall.dir/clean:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-build && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-build" && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : _deps/glm-build/CMakeFiles/uninstall.dir/clean
 
 _deps/glm-build/CMakeFiles/uninstall.dir/depend:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-src /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/glm-build/CMakeFiles/uninstall.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : _deps/glm-build/CMakeFiles/uninstall.dir/depend
 

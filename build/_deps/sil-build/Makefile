@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation
+CMAKE_SOURCE_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build
+CMAKE_BINARY_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/worksh
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.27.7/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -97,49 +97,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-build//CMakeFiles/progress.marks
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles 0
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/sil-build//CMakeFiles/progress.marks"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/clean
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,23 +148,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/preinstall
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/preinstall
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles/VerifyGlobs.cmake
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -P "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 _deps/sil-build/CMakeFiles/sil.dir/rule:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/CMakeFiles/sil.dir/rule
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sil-build/CMakeFiles/sil.dir/rule
 .PHONY : _deps/sil-build/CMakeFiles/sil.dir/rule
 
 # Convenience name for target.
@@ -173,7 +173,7 @@ sil: _deps/sil-build/CMakeFiles/sil.dir/rule
 
 # fast build rule for target.
 sil/fast:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/build
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/build
 .PHONY : sil/fast
 
 src/sil.o: src/sil.cpp.o
@@ -181,7 +181,7 @@ src/sil.o: src/sil.cpp.o
 
 # target to build an object file
 src/sil.cpp.o:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o
 .PHONY : src/sil.cpp.o
 
 src/sil.i: src/sil.cpp.i
@@ -189,7 +189,7 @@ src/sil.i: src/sil.cpp.i
 
 # target to preprocess a source file
 src/sil.cpp.i:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.i
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.i
 .PHONY : src/sil.cpp.i
 
 src/sil.s: src/sil.cpp.s
@@ -197,7 +197,7 @@ src/sil.s: src/sil.cpp.s
 
 # target to generate assembly for a file
 src/sil.cpp.s:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.s
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.s
 .PHONY : src/sil.cpp.s
 
 # Help Target
@@ -227,7 +227,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles/VerifyGlobs.cmake
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -P "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles/VerifyGlobs.cmake"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

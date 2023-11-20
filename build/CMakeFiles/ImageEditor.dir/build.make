@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation
+CMAKE_SOURCE_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build
+CMAKE_BINARY_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ImageEditor.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/ImageEditor.dir/progress.make
 include CMakeFiles/ImageEditor.dir/flags.make
 
 CMakeFiles/ImageEditor.dir/lib/random.cpp.o: CMakeFiles/ImageEditor.dir/flags.make
-CMakeFiles/ImageEditor.dir/lib/random.cpp.o: /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/lib/random.cpp
+CMakeFiles/ImageEditor.dir/lib/random.cpp.o: /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/lib/random.cpp
 CMakeFiles/ImageEditor.dir/lib/random.cpp.o: CMakeFiles/ImageEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ImageEditor.dir/lib/random.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ImageEditor.dir/lib/random.cpp.o -MF CMakeFiles/ImageEditor.dir/lib/random.cpp.o.d -o CMakeFiles/ImageEditor.dir/lib/random.cpp.o -c /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/lib/random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ImageEditor.dir/lib/random.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ImageEditor.dir/lib/random.cpp.o -MF CMakeFiles/ImageEditor.dir/lib/random.cpp.o.d -o CMakeFiles/ImageEditor.dir/lib/random.cpp.o -c "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/lib/random.cpp"
 
 CMakeFiles/ImageEditor.dir/lib/random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ImageEditor.dir/lib/random.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/lib/random.cpp > CMakeFiles/ImageEditor.dir/lib/random.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/lib/random.cpp" > CMakeFiles/ImageEditor.dir/lib/random.cpp.i
 
 CMakeFiles/ImageEditor.dir/lib/random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ImageEditor.dir/lib/random.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/lib/random.cpp -o CMakeFiles/ImageEditor.dir/lib/random.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/lib/random.cpp" -o CMakeFiles/ImageEditor.dir/lib/random.cpp.s
 
 CMakeFiles/ImageEditor.dir/src/main.cpp.o: CMakeFiles/ImageEditor.dir/flags.make
-CMakeFiles/ImageEditor.dir/src/main.cpp.o: /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/src/main.cpp
+CMakeFiles/ImageEditor.dir/src/main.cpp.o: /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/src/main.cpp
 CMakeFiles/ImageEditor.dir/src/main.cpp.o: CMakeFiles/ImageEditor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ImageEditor.dir/src/main.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ImageEditor.dir/src/main.cpp.o -MF CMakeFiles/ImageEditor.dir/src/main.cpp.o.d -o CMakeFiles/ImageEditor.dir/src/main.cpp.o -c /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ImageEditor.dir/src/main.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ImageEditor.dir/src/main.cpp.o -MF CMakeFiles/ImageEditor.dir/src/main.cpp.o.d -o CMakeFiles/ImageEditor.dir/src/main.cpp.o -c "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/src/main.cpp"
 
 CMakeFiles/ImageEditor.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ImageEditor.dir/src/main.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/src/main.cpp > CMakeFiles/ImageEditor.dir/src/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/src/main.cpp" > CMakeFiles/ImageEditor.dir/src/main.cpp.i
 
 CMakeFiles/ImageEditor.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ImageEditor.dir/src/main.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/src/main.cpp -o CMakeFiles/ImageEditor.dir/src/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/src/main.cpp" -o CMakeFiles/ImageEditor.dir/src/main.cpp.s
 
 # Object files for target ImageEditor
 ImageEditor_OBJECTS = \
@@ -112,7 +112,7 @@ ImageEditor: _deps/sil-build/libsil.a
 ImageEditor: _deps/img-build/libimg.a
 ImageEditor: _deps/img-build/libstb_image.a
 ImageEditor: CMakeFiles/ImageEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ImageEditor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ImageEditor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/ImageEditor.dir/clean:
 .PHONY : CMakeFiles/ImageEditor.dir/clean
 
 CMakeFiles/ImageEditor.dir/depend:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/CMakeFiles/ImageEditor.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/CMakeFiles/ImageEditor.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/ImageEditor.dir/depend
 

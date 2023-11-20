@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
+RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild
+CMAKE_SOURCE_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild
+CMAKE_BINARY_DIR = "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild"
 
 # Utility rule file for img-populate.
 
@@ -77,60 +77,60 @@ CMakeFiles/img-populate-complete: img-populate-prefix/src/img-populate-stamp/img
 CMakeFiles/img-populate-complete: img-populate-prefix/src/img-populate-stamp/img-populate-build
 CMakeFiles/img-populate-complete: img-populate-prefix/src/img-populate-stamp/img-populate-install
 CMakeFiles/img-populate-complete: img-populate-prefix/src/img-populate-stamp/img-populate-test
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'img-populate'"
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E make_directory /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate-complete
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Completed 'img-populate'"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E make_directory "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate-complete"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-done"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-update:
 .PHONY : img-populate-prefix/src/img-populate-stamp/img-populate-update
 
 img-populate-prefix/src/img-populate-stamp/img-populate-build: img-populate-prefix/src/img-populate-stamp/img-populate-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E echo_append
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E echo_append
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-build"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-configure: img-populate-prefix/tmp/img-populate-cfgcmd.txt
 img-populate-prefix/src/img-populate-stamp/img-populate-configure: img-populate-prefix/src/img-populate-stamp/img-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E echo_append
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E echo_append
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-configure"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-download: img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt
 img-populate-prefix/src/img-populate-stamp/img-populate-download: img-populate-prefix/src/img-populate-stamp/img-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps && /usr/local/Cellar/cmake/3.27.7/bin/cmake -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-gitclone.cmake
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-gitclone.cmake"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-download"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-install: img-populate-prefix/src/img-populate-stamp/img-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E echo_append
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E echo_append
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-install"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'img-populate'"
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -Dcfgdir= -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-mkdirs.cmake
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'img-populate'"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -Dcfgdir= -P "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-mkdirs.cmake"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-mkdir"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-patch: img-populate-prefix/src/img-populate-stamp/img-populate-patch-info.txt
 img-populate-prefix/src/img-populate-stamp/img-populate-patch: img-populate-prefix/src/img-populate-stamp/img-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'img-populate'"
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E echo_append
-	/usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-patch
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'img-populate'"
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E echo_append
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-patch"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-update:
 .PHONY : img-populate-prefix/src/img-populate-stamp/img-populate-update
 
 img-populate-prefix/src/img-populate-stamp/img-populate-test: img-populate-prefix/src/img-populate-stamp/img-populate-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E echo_append
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-build && /usr/local/Cellar/cmake/3.27.7/bin/cmake -E touch /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-test
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E echo_append
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-build" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-test"
 
 img-populate-prefix/src/img-populate-stamp/img-populate-update: img-populate-prefix/tmp/img-populate-gitupdate.cmake
 img-populate-prefix/src/img-populate-stamp/img-populate-update: img-populate-prefix/src/img-populate-stamp/img-populate-update-info.txt
 img-populate-prefix/src/img-populate-stamp/img-populate-update: img-populate-prefix/src/img-populate-stamp/img-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'img-populate'"
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src && /usr/local/Cellar/cmake/3.27.7/bin/cmake -Dcan_fetch=YES -P /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-gitupdate.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'img-populate'"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-src" && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -Dcan_fetch=YES -P "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/tmp/img-populate-gitupdate.cmake"
 
 img-populate: CMakeFiles/img-populate
 img-populate: CMakeFiles/img-populate-complete
@@ -154,6 +154,6 @@ CMakeFiles/img-populate.dir/clean:
 .PHONY : CMakeFiles/img-populate.dir/clean
 
 CMakeFiles/img-populate.dir/depend:
-	cd /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild" "/Users/louiseperidy/Desktop/IMAC/Algo Prog/Workshop/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles/img-populate.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/img-populate.dir/depend
 

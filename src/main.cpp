@@ -96,7 +96,6 @@ void imageBruitee(sil::Image image)
 // Exo 008
 void rgbSplit(sil::Image image)
 {
-    // Chaque pixel va prendre comme couleur le rouge d'un pixel un peu à sa droite, son propre vert, et le bleu d'un pixel un peu à sa gauche.
     sil::Image modele{image.width(), image.height()};
 
     for (int x = 0; x < image.width(); x++)
@@ -104,7 +103,6 @@ void rgbSplit(sil::Image image)
         for (int y = 0; y < image.height(); y++)
         {
             if (x < 20)
-
                 modele.pixel(x, y).r = image.pixel(0, y).r;
             else
                 modele.pixel(x, y).r = image.pixel(x - 20, y).r;
@@ -146,4 +144,5 @@ int main()
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
+    rgbSplit(image);
 }
