@@ -30,10 +30,22 @@ void blackAndWhite(sil::Image image)
     image.save("output/logo-nb.png");
 }
 
+void negativeImage(sil::Image image)
+{
+    for (glm::vec3 &color : image.pixels())
+    {
+        color.r = 1.f - color.r;
+        color.g = 1.f - color.g;
+        color.b = 1.f - color.b;
+    }
+    image.save("output/logo-neg.png");
+}
+
 int main()
 {
     sil::Image image{"images/logo.png"};
     // greenImage(image);
     //swapRedandBlue(image);
-    blackAndWhite(image);
+    // blackAndWhite(image);
+    negativeImage(image);
 }
