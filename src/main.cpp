@@ -41,11 +41,26 @@ void negativeImage(sil::Image image)
     image.save("output/logo-neg.png");
 }
 
+void mirrorImage(sil::Image image)
+{
+    for (int i = 0; i < image.height(); i++)
+    {
+        for (int j = 0; j < image.width() / 2; j++)
+        {
+            glm::vec3 &color1 = image.pixel(j, i);
+            glm::vec3 &color2 = image.pixel(image.width() - j - 1, i);
+            std::swap(color1, color2);
+        }
+    }
+    image.save("output/logo-mirror.png");
+}
+
 int main()
 {
     sil::Image image{"images/logo.png"};
     // greenImage(image);
     //swapRedandBlue(image);
     // blackAndWhite(image);
-    negativeImage(image);
+    // negativeImage(image);
+    // mirrorImage(image);
 }
