@@ -24,7 +24,8 @@ void blackAndWhite(sil::Image image)
     for (glm::vec3 &color : image.pixels())
     {
         float greyLevel = (color.r + color.g + color.b) / 3;
-        //color = greyLevel;
+        glm::vec3 newcolor(greyLevel);
+        color = newcolor;
     }
     image.save("output/logo-nb.png");
 }
@@ -33,6 +34,6 @@ int main()
 {
     sil::Image image{"images/logo.png"};
     // greenImage(image);
-    //blackAndWhite(image);
-    swapRedandBlue(image);
+    //swapRedandBlue(image);
+    blackAndWhite(image);
 }
