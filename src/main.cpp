@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include "random.hpp"
 
 void greenImage(sil::Image image)
 {
@@ -75,9 +76,16 @@ void gradient(sil::Image &image)
 
 void imageBruitee(sil::Image image)
 {
-    srand(image.height());
-    srand(image.width());
+    int size = (image.width()*image.height()) / 2;
+    for (int i = 0; i <= size; i++)
+    {
+        int x = random_int(0, image.width());
+        int y = random_int(0, image.height());
+        image.pixel(x, y) = image.pixel(random_int(0, image.width()), random_int(0, image.height()));
+    }
+    image.save("output/logo-bruit.png");
 }
+
 
 int main()
 {
@@ -88,5 +96,6 @@ int main()
     // blackAndWhite(image);
     // egativeImage(image);
     // mirrorImage(image);
-    gradient(imageNoire);
+    // gradient(imageNoire);
+    imageBruitee(image);
 }
