@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/CMakeFiles/sil-populate"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/CMakeFiles/sil-populate.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/CMakeFiles/sil-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-build.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-download.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-install.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-test.rule"
+		},
+		{
+			"file" : "/Users/louiseperidy/Downloads/S1-Prog-Workshop-main/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sil-populate"
+		],
+		"name" : "sil-populate"
+	}
+}
