@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.7/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.27.7/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild
+CMAKE_SOURCE_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild
+CMAKE_BINARY_DIR = /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-man
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/Cellar/cmake/3.27.4/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.27.7/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.27.7/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

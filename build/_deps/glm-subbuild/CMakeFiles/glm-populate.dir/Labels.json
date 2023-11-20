@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate-complete.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/CMakeFiles/glm-populate-complete.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update.rule"
 		}
 	],
 	"target" : 

@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate-complete.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/CMakeFiles/sil-populate-complete.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-build.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-build.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-configure.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-configure.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-download.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-download.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-install.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-install.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-mkdir.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-mkdir.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-patch.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-patch.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-test.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-test.rule"
 		},
 		{
-			"file" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-update.rule"
+			"file" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/src/sil-populate-stamp/sil-populate-update.rule"
 		}
 	],
 	"target" : 

@@ -145,28 +145,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ImageEditor::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ImageEditor-Debug-9190ca1712103a1f2a6e.json",
+					"jsonFile" : "target-ImageEditor-Debug-10e72fa8027eb2e7d3f8.json",
 					"name" : "ImageEditor",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "img::@58f24d24aeb0c1731cf8",
-					"jsonFile" : "target-img-Debug-e60dfa38d9b37461830e.json",
+					"jsonFile" : "target-img-Debug-eb4c2946b486e3563cfe.json",
 					"name" : "img",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "sil::@45796e9c269400ec31da",
-					"jsonFile" : "target-sil-Debug-8ddf8f5bf5eebb8f0823.json",
+					"jsonFile" : "target-sil-Debug-bd3928ab176fab7d9d40.json",
 					"name" : "sil",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "stb_image::@58f24d24aeb0c1731cf8",
-					"jsonFile" : "target-stb_image-Debug-f13234d693f86201044e.json",
+					"jsonFile" : "target-stb_image-Debug-07573e32ab2cb5e52edc.json",
 					"name" : "stb_image",
 					"projectIndex" : 1
 				},
@@ -183,8 +183,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build",
-		"source" : "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation"
+		"build" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build",
+		"source" : "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation"
 	},
 	"version" : 
 	{

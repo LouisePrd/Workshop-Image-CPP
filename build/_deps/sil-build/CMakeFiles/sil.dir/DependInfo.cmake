@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-src/src/sil.cpp" "_deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o" "gcc" "_deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o.d"
+  "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-src/src/sil.cpp" "_deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o" "gcc" "_deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

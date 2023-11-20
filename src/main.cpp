@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include "random.hpp"
 
+// Exo 001 *
 void greenImage(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -14,6 +15,7 @@ void greenImage(sil::Image image)
     image.save("output/logo-vert.png");
 }
 
+// Exo 002 *
 void swapRedandBlue(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -23,6 +25,7 @@ void swapRedandBlue(sil::Image image)
     image.save("output/logo-swap.png");
 }
 
+// Exo 003 *
 void blackAndWhite(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -34,6 +37,7 @@ void blackAndWhite(sil::Image image)
     image.save("output/logo-nb.png");
 }
 
+// Exo 004 *
 void negativeImage(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -45,20 +49,7 @@ void negativeImage(sil::Image image)
     image.save("output/logo-neg.png");
 }
 
-void mirrorImage(sil::Image image)
-{
-    for (int i = 0; i < image.height(); i++)
-    {
-        for (int j = 0; j < image.width() / 2; j++)
-        {
-            glm::vec3 &color1 = image.pixel(j, i);
-            glm::vec3 &color2 = image.pixel(image.width() - j - 1, i);
-            std::swap(color1, color2);
-        }
-    }
-    image.save("output/logo-mirror.png");
-}
-
+// Exo 005 *
 void gradient(sil::Image &image)
 {
     for (int x = 0; x < image.width(); x++)
@@ -74,6 +65,22 @@ void gradient(sil::Image &image)
     image.save("output/logo-gradient.png");
 }
 
+// Exo 006 **
+void mirrorImage(sil::Image image)
+{
+    for (int i = 0; i < image.height(); i++)
+    {
+        for (int j = 0; j < image.width() / 2; j++)
+        {
+            glm::vec3 &color1 = image.pixel(j, i);
+            glm::vec3 &color2 = image.pixel(image.width() - j - 1, i);
+            std::swap(color1, color2);
+        }
+    }
+    image.save("output/logo-mirror.png");
+}
+
+// Exo 007 **
 void imageBruitee(sil::Image image)
 {
     int size = (image.width()*image.height()) / 2;
@@ -86,16 +93,30 @@ void imageBruitee(sil::Image image)
     image.save("output/logo-bruit.png");
 }
 
+// Exo 009 **
+void imageLuminosity(sil::Image image)
+{
+    for (glm::vec3 &color : image.pixels())
+    {
+        color.r = color.r * 1.5f;
+        color.g = color.g * 1.5f;
+        color.b = color.b * 1.5f;
+    }
+    image.save("output/logo-luminosity.png");
+}
 
+// ==== MAIN ====
 int main()
 {
     sil::Image image{"images/logo.png"};
     sil::Image imageNoire{300, 200};
+    sil::Image image90deg{345, 300};
     // greenImage(image);
     // swapRedandBlue(image);
     // blackAndWhite(image);
     // egativeImage(image);
     // mirrorImage(image);
     // gradient(imageNoire);
-    imageBruitee(image);
+    // imageBruitee(image);
+    imageLuminosity(image);
 }

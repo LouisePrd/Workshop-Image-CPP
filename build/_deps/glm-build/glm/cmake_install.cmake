@@ -1,4 +1,4 @@
-# Install script for directory: /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm
+# Install script for directory: /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-src/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

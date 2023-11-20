@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake;-P;/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/tmp/sil-populate-gitclone.cmake
-source_dir=/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/sil-src
-work_dir=/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps
+command=/usr/local/Cellar/cmake/3.27.7/bin/cmake;-P;/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-subbuild/sil-populate-prefix/tmp/sil-populate-gitclone.cmake
+source_dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/sil-src
+work_dir=/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps
 repository=https://github.com/JulesFouchy/Simple-Image-Lib
 remote=origin
 init_submodules=TRUE

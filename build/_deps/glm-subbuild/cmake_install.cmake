@@ -1,4 +1,4 @@
-# Install script for directory: /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild
+# Install script for directory: /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/glm-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

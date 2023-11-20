@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o" "gcc" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o.d"
-  "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o" "gcc" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o.d"
+  "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image.cpp" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o" "gcc" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o.d"
+  "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src/lib/stb_image/stb_image_write.cpp" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o" "gcc" "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

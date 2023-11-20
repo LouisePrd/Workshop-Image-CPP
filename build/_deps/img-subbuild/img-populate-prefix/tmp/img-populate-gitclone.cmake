@@ -3,21 +3,21 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-if(EXISTS "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt" AND EXISTS "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt" AND
-  "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt")
+if(EXISTS "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt" AND EXISTS "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt" AND
+  "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt")
   message(STATUS
     "Avoiding repeated git clone, stamp file is up to date: "
-    "'/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt'"
+    "'/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt'"
   )
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E rm -rf "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src"
+  COMMAND ${CMAKE_COMMAND} -E rm -rf "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: '/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src'")
+  message(FATAL_ERROR "Failed to remove directory: '/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src'")
 endif()
 
 # try the clone 3 times in case there is an odd git clone issue
@@ -25,9 +25,9 @@ set(error_code 1)
 set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
-    COMMAND "/opt/homebrew/bin/git"
+    COMMAND "/usr/bin/git"
             clone --no-checkout --config "advice.detachedHead=false" "https://github.com/CoolLibs/img" "img-src"
-    WORKING_DIRECTORY "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps"
+    WORKING_DIRECTORY "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps"
     RESULT_VARIABLE error_code
   )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -40,9 +40,9 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/opt/homebrew/bin/git"
+  COMMAND "/usr/bin/git"
           checkout "46abe69077db8427471eb82b270f10cd4cde9812" --
-  WORKING_DIRECTORY "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src"
+  WORKING_DIRECTORY "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
@@ -52,22 +52,22 @@ endif()
 set(init_submodules TRUE)
 if(init_submodules)
   execute_process(
-    COMMAND "/opt/homebrew/bin/git" 
+    COMMAND "/usr/bin/git" 
             submodule update --recursive --init 
-    WORKING_DIRECTORY "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src"
+    WORKING_DIRECTORY "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src"
     RESULT_VARIABLE error_code
   )
 endif()
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: '/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-src'")
+  message(FATAL_ERROR "Failed to update submodules in: '/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-src'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E copy "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt" "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt"
+  COMMAND ${CMAKE_COMMAND} -E copy "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitinfo.txt" "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/_deps/img-subbuild/img-populate-prefix/src/img-populate-stamp/img-populate-gitclone-lastrun.txt'")
 endif()

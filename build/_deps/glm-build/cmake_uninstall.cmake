@@ -1,14 +1,14 @@
-if(NOT EXISTS "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/install_manifest.txt")
+if(NOT EXISTS "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: /Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/install_manifest.txt")
 endif()
 
-file(READ "/Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/install_manifest.txt" files)
+file(READ "/Users/annamarialannaud/Documents/imac./cours/ProgAlgo/workshop-image-manipulation/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
   if(IS_SYMLINK "$ENV{DESTDIR}${file}" OR EXISTS "$ENV{DESTDIR}${file}")
     exec_program(
-      "/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+      "/usr/local/Cellar/cmake/3.27.7/bin/cmake" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
       OUTPUT_VARIABLE rm_out
       RETURN_VALUE rm_retval
       )
