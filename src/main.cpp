@@ -1,4 +1,7 @@
 #include <sil/sil.hpp>
+#include <iostream>
+#include <vector>
+#include <cstdlib>
 
 void greenImage(sil::Image image)
 {
@@ -55,12 +58,35 @@ void mirrorImage(sil::Image image)
     image.save("output/logo-mirror.png");
 }
 
+void gradient(sil::Image &image)
+{
+    for (int x = 0; x < image.width(); x++)
+
+    {
+        for (int y = 0; y < image.height(); y++)
+
+        {
+            float value = static_cast<float>(x) / static_cast<float>(image.width());
+            image.pixel(x, y) = glm::vec3(value);
+        }
+    }
+    image.save("output/logo-gradient.png");
+}
+
+void imageBruitee(sil::Image image)
+{
+    srand(image.height());
+    srand(image.width());
+}
+
 int main()
 {
     sil::Image image{"images/logo.png"};
+    sil::Image imageNoire{300, 200};
     // greenImage(image);
-    //swapRedandBlue(image);
+    // swapRedandBlue(image);
     // blackAndWhite(image);
-    // negativeImage(image);
+    // egativeImage(image);
     // mirrorImage(image);
+    gradient(imageNoire);
 }

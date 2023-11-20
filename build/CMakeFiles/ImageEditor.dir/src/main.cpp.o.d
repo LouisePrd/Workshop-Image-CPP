@@ -964,4 +964,5 @@ CMakeFiles/ImageEditor.dir/src/main.cpp.o: \
   /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm/matrix.hpp \
   /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm/vector_relational.hpp \
   /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm/integer.hpp \
-  /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm/detail/func_integer.inl
+  /Users/louiseperidy/Desktop/Workshop-Image/workshop-image-manipulation/build/_deps/glm-src/glm/detail/func_integer.inl \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream
