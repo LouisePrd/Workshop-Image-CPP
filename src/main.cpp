@@ -83,7 +83,7 @@ void mirrorImage(sil::Image image)
 // Exo 007 **
 void imageBruitee(sil::Image image)
 {
-    int size = (image.width()*image.height()) / 2;
+    int size = (image.width() * image.height()) / 2;
     for (int i = 0; i <= size; i++)
     {
         int x = random_int(0, image.width());
@@ -105,6 +105,32 @@ void imageLuminosity(sil::Image image)
     image.save("output/logo-luminosity.png");
 }
 
+void rgbSplit(sil::Image image)
+{
+    // Chaque pixel va prendre comme couleur le rouge d'un pixel un peu à sa droite, son propre vert, et le bleu d'un pixel un peu à sa gauche.
+    sil::Image modele{image.width(), image.height()};
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            if (x < 20)
+
+                modele.pixel(x, y).r = image.pixel(0, y).r;
+            else
+                modele.pixel(x, y).r = image.pixel(x - 20, y).r;
+
+            if (x > image.width)
+                modele.pixel(x, y).r = image.pixel(image.width(), y).r;
+            else
+                modele.pixel(x, y).b = image.pixel(x + 20, y).b;
+
+            modele.pixel(x, y).g = image.pixel(x, y).g;
+        }
+    }
+    modele.save("output/logo-split.png");
+}
+
 // ==== MAIN ====
 int main()
 {
@@ -118,5 +144,5 @@ int main()
     // mirrorImage(image);
     // gradient(imageNoire);
     // imageBruitee(image);
-    imageLuminosity(image);
+    // imageLuminosity(image);
 }
