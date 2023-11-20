@@ -93,18 +93,7 @@ void imageBruitee(sil::Image image)
     image.save("output/logo-bruit.png");
 }
 
-// Exo 009 **
-void imageLuminosity(sil::Image image)
-{
-    for (glm::vec3 &color : image.pixels())
-    {
-        color.r = color.r * 1.5f;
-        color.g = color.g * 1.5f;
-        color.b = color.b * 1.5f;
-    }
-    image.save("output/logo-luminosity.png");
-}
-
+// Exo 008
 void rgbSplit(sil::Image image)
 {
     // Chaque pixel va prendre comme couleur le rouge d'un pixel un peu à sa droite, son propre vert, et le bleu d'un pixel un peu à sa gauche.
@@ -120,7 +109,7 @@ void rgbSplit(sil::Image image)
             else
                 modele.pixel(x, y).r = image.pixel(x - 20, y).r;
 
-            if (x > image.width)
+            if (x > image.width())
                 modele.pixel(x, y).r = image.pixel(image.width(), y).r;
             else
                 modele.pixel(x, y).b = image.pixel(x + 20, y).b;
@@ -129,6 +118,18 @@ void rgbSplit(sil::Image image)
         }
     }
     modele.save("output/logo-split.png");
+}
+
+// Exo 009 **
+void imageLuminosity(sil::Image image)
+{
+    for (glm::vec3 &color : image.pixels())
+    {
+        color.r = color.r * 1.5f;
+        color.g = color.g * 1.5f;
+        color.b = color.b * 1.5f;
+    }
+    image.save("output/logo-luminosity.png");
 }
 
 // ==== MAIN ====
