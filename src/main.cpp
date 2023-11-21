@@ -260,9 +260,9 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
 }
 
 // -------------- Exo 019 ***+* --------------
-void trimage(sil::Image image)
+void trimage(sil::Image photo)
 {
-const int bayer_n = 6;
+const int bayer_n = 4;
 float bayer_matrix_4x4[][bayer_n] = {
     {    -0.5,       0,  -0.375,   0.125 },
     {    0.25,   -0.25,   0.375, - 0.125 },
@@ -270,28 +270,29 @@ float bayer_matrix_4x4[][bayer_n] = {
     {  0.4375, -0.0625,  0.3125, -0.1875 },
 };
 
-    for (int x = 0; x < image.width(); x++)
+    for (int x = 0; x < photo.width(); x++)
     {
-        for (int y = 0; y < image.height(); y++)
+        for (int y = 0; y < photo.height(); y++)
         {
             float value = bayer_matrix_4x4[y % bayer_n][x % bayer_n];
-            if (image.pixel(x, y).r > value)
+            if (photo.pixel(x, y).r > value)
             {
-                image.pixel(x, y) = {1, 1, 1};
+                photo.pixel(x, y) = {1, 1, 1};
             }
             else
             {
-                image.pixel(x, y) = {0, 0, 0};
+                photo.pixel(x, y) = {0, 0, 0};
             }
         }
     }
-    image.save("output/logo-trimage.png");
+    photo.save("output/photo-trimage.png");
 }
 
 // ==== MAIN ====
 int main()
 {
     sil::Image image{"images/logo.png"};
+    sil::Image photo{"images/photo.jpg"};
     sil::Image imageNoire{300, 200};
     sil::Image image90deg{345, 300};
     sil::Image disque{500, 500};
@@ -306,8 +307,8 @@ int main()
     // rgbSplit(image);
     // createDisc(disque, 130);
     // createCircle(disque, 130, 5);
-    rosace(disque, 100, 6);
+    // rosace(disque, 100, 6);
     // mosaic(image, 5);
-    // trimage(image);
+    trimage(photo);
     // mosaicMirror(mosaic(image, 5), 5);
 }
