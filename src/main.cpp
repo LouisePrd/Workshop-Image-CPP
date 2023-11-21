@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include "random.hpp"
 
-// Exo 001 *
+// -------------- Exo 001 * --------------
 void greenImage(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -15,7 +15,7 @@ void greenImage(sil::Image image)
     image.save("output/logo-vert.png");
 }
 
-// Exo 002 *
+// -------------- Exo 002 * --------------
 void swapRedandBlue(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -25,7 +25,7 @@ void swapRedandBlue(sil::Image image)
     image.save("output/logo-swap.png");
 }
 
-// Exo 003 *
+// -------------- Exo 003 * --------------
 void blackAndWhite(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -37,7 +37,7 @@ void blackAndWhite(sil::Image image)
     image.save("output/logo-nb.png");
 }
 
-// Exo 004 *
+// -------------- Exo 004 * --------------
 void negativeImage(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -49,7 +49,7 @@ void negativeImage(sil::Image image)
     image.save("output/logo-neg.png");
 }
 
-// Exo 005 *
+// -------------- Exo 005 * --------------
 void gradient(sil::Image &image)
 {
     for (int x = 0; x < image.width(); x++)
@@ -65,7 +65,7 @@ void gradient(sil::Image &image)
     image.save("output/logo-gradient.png");
 }
 
-// Exo 006 **
+// -------------- Exo 006 ** --------------
 void mirrorImage(sil::Image image)
 {
     for (int i = 0; i < image.height(); i++)
@@ -80,7 +80,7 @@ void mirrorImage(sil::Image image)
     image.save("output/logo-mirror.png");
 }
 
-// Exo 007 **
+// -------------- Exo 007 ** --------------
 void imageBruitee(sil::Image image)
 {
     int size = (image.width() * image.height()) / 2;
@@ -93,7 +93,7 @@ void imageBruitee(sil::Image image)
     image.save("output/logo-bruit.png");
 }
 
-// Exo 008
+// -------------- Exo 008 --------------
 void rgbSplit(sil::Image image)
 {
     sil::Image modele{image.width(), image.height()};
@@ -118,7 +118,7 @@ void rgbSplit(sil::Image image)
     modele.save("output/logo-split.png");
 }
 
-// Exo 009 **
+// -------------- Exo 009 ** --------------
 void imageLuminosity(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -130,15 +130,8 @@ void imageLuminosity(sil::Image image)
     image.save("output/logo-luminosity.png");
 }
 
-// Exo 011 **
+// -------------- Exo 011 ** --------------
 void createDisc(sil::Image disque, int r) {
-    r = 130;
-    for (glm::vec3 &color : disque.pixels())
-    {
-        color.r = 0.f;
-        color.r = 0.f;
-        color.b = 0.f;
-    }
     int x0 = disque.width() / 2;
     int y0 = disque.height() / 2;
     for (int x = 0; x < disque.width(); x++)
@@ -149,45 +142,51 @@ void createDisc(sil::Image disque, int r) {
             int dy = y - y0;
             if (dx * dx + dy * dy <= r * r)
             {
-                disque.pixel(x, y).r = 1.f;
-                disque.pixel(x, y).g = 1.f;
-                disque.pixel(x, y).b = 1.f;
+                disque.pixel(x, y) = {1, 1, 1};
             }
         }
     }
     disque.save("output/disque.png");
 }
 
-// Exo 012 *
-void createCircle(sil::Image disque, int r, int thickness) {
-    r = 130;
-    for (glm::vec3 &color : disque.pixels())
-    {
-        color.r = 0.f;
-        color.r = 0.f;
-        color.b = 0.f;
-    }
-    int x0 = disque.width() / 2;
-    int y0 = disque.height() / 2;
+// -------------- Exo 012 * --------------
+sil::Image createCircle(sil::Image disque, int x0, int y0, int r, int thickness) {
+    // int x0 = disque.width() / 2;
+    // int y0 = disque.height() / 2;
 
     for (int x = 0; x < disque.width(); x++)
     {
-        for (int y = 0; y < disque.height(); y++)
+        for(int y= 0; y < disque.height(); y++)
         {
             int dx = x - x0;
             int dy = y - y0;
             if (dx * dx + dy * dy <= (r + thickness) * (r + thickness) && dx * dx + dy * dy >= (r - thickness) * (r - thickness))
             {
-                disque.pixel(x, y).r = 1.f;
-                disque.pixel(x, y).g = 1.f;
-                disque.pixel(x, y).b = 1.f;
+                disque.pixel(x, y) = {1, 1, 1};
             }
         }
     }
-    disque.save("output/disque.png");
+    // --- if you want to draw a single circle :
+    // disque.save("output/disque.png");
+    return disque;
 }
 
-// Exo 014 **
+// -------------- Exo 013 *** --------------
+void rosace(sil::Image disque, int r, int n)
+{
+    int x0 = disque.width() / 2;
+    int y0 = disque.height() / 2;
+    for (int i = 0; i < n; i++)
+    {
+        float angle = 2 * M_PI * i / n;
+        int x = x0 + r * cos(angle);
+        int y = y0 + r * sin(angle);
+        disque = createCircle(disque, x, y, 130, 3);
+    }
+    disque.save("output/rosace.png");
+}
+
+// -------------- Exo 014 ** --------------
 void mosaic(sil::Image modele, int value)
 {
     int height = modele.height();
@@ -213,13 +212,14 @@ void mosaic(sil::Image modele, int value)
     mosaicResult.save("output/logo-mosaic.png");
 }
 
-// Exo 015 **
+// -------------- Exo 015 ** --------------
 void mosaicMirror(sil::Image modele, int value)
 {
     sil::Image mosaicResult{modele.height(), modele.height()};
 }
 
-// ==== MAIN ====
+// ====-------------- MAIN --------------====
+
 int main()
 {
     sil::Image image{"images/logo.png"};
@@ -229,13 +229,15 @@ int main()
     // greenImage(image);
     // swapRedandBlue(image);
     // blackAndWhite(image);
-    // egativeImage(image);
+    // negativeImage(image);
     // mirrorImage(image);
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
     // rgbSplit(image);
-    // createDisc(disque, 500);
-    createCircle(disque, 500, 5);
+    // createDisc(disque, 130);
+    // createCircle(disque, 130, 5);
+    // rosace(disque, 150, 6);
     // mosaic(image, 5);
+    rosace(disque, 100, 6);
 }
