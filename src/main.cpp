@@ -244,25 +244,48 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
                     else
                         mosaicResult.pixel(coordX, coordY) = mosaic.pixel(coordX, coordY);
 
-                    glm::vec3 swap = mosaicResult.pixel(coordX, coordY);
                     if (j % 2 == 0 && i % 2 != 0)
                     {
-                        mosaicResult.pixel(coordX, coordY) = glm::vec3(5);
                         std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel((mosaic.width() - 1) - coordX, coordY));
                     }
                     else if (j % 2 != 0 && i % 2 == 0)
                     {
-                        //mosaicResult.pixel(coordX, coordY) = glm::vec3(5);
-                        // mosaicResult.pixel(coordX, coordY) = mosaic.pixel((mosaic.width() - 1) - coordX, coordY);
-                        // mosaicResult.pixel((mosaic.width() - 1) - coordX, coordY) = swap;
-                        //std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel((mosaic.width() - 1) - coordX, coordY));
+                        std::swap(mosaic.pixel(coordX, (mosaic.height() - 1) - coordY), mosaicResult.pixel(coordX, coordY));
                     }
                 }
             }
         }
     }
+    mosaicResult.save("output/logo-mosaicMirror2.png");
+}
 
-    mosaicResult.save("output/logo-mosaicMirror.png");
+// -------------- Exo 019 ***+* --------------
+void trimage(sil::Image image)
+{
+const int bayer_n = 6;
+float bayer_matrix_4x4[][bayer_n] = {
+    {    -0.5,       0,  -0.375,   0.125 },
+    {    0.25,   -0.25,   0.375, - 0.125 },
+    { -0.3125,  0.1875, -0.4375,  0.0625 },
+    {  0.4375, -0.0625,  0.3125, -0.1875 },
+};
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            float value = bayer_matrix_4x4[y % bayer_n][x % bayer_n];
+            if (image.pixel(x, y).r > value)
+            {
+                image.pixel(x, y) = {1, 1, 1};
+            }
+            else
+            {
+                image.pixel(x, y) = {0, 0, 0};
+            }
+        }
+    }
+    image.save("output/logo-trimage.png");
 }
 
 // ==== MAIN ====
@@ -286,5 +309,5 @@ int main()
     rosace(disque, 100, 6);
     // mosaic(image, 5);
     // trimage(image);
-    //mosaicMirror(mosaic(image, 5), 5);
+    // mosaicMirror(mosaic(image, 5), 5);
 }
