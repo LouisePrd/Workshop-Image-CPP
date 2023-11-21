@@ -130,6 +130,63 @@ void imageLuminosity(sil::Image image)
     image.save("output/logo-luminosity.png");
 }
 
+// Exo 011 **
+void createDisc(sil::Image disque, int r) {
+    r = 130;
+    for (glm::vec3 &color : disque.pixels())
+    {
+        color.r = 0.f;
+        color.r = 0.f;
+        color.b = 0.f;
+    }
+    int x0 = disque.width() / 2;
+    int y0 = disque.height() / 2;
+    for (int x = 0; x < disque.width(); x++)
+    {
+        for (int y = 0; y < disque.height(); y++)
+        {
+            int dx = x - x0;
+            int dy = y - y0;
+            if (dx * dx + dy * dy <= r * r)
+            {
+                disque.pixel(x, y).r = 1.f;
+                disque.pixel(x, y).g = 1.f;
+                disque.pixel(x, y).b = 1.f;
+            }
+        }
+    }
+    disque.save("output/disque.png");
+}
+
+// Exo 012 *
+void createCircle(sil::Image disque, int r, int thickness) {
+    r = 130;
+    for (glm::vec3 &color : disque.pixels())
+    {
+        color.r = 0.f;
+        color.r = 0.f;
+        color.b = 0.f;
+    }
+    int x0 = disque.width() / 2;
+    int y0 = disque.height() / 2;
+
+    for (int x = 0; x < disque.width(); x++)
+    {
+        for (int y = 0; y < disque.height(); y++)
+        {
+            int dx = x - x0;
+            int dy = y - y0;
+            if (dx * dx + dy * dy <= (r + thickness) * (r + thickness) && dx * dx + dy * dy >= (r - thickness) * (r - thickness))
+            {
+                disque.pixel(x, y).r = 1.f;
+                disque.pixel(x, y).g = 1.f;
+                disque.pixel(x, y).b = 1.f;
+            }
+        }
+    }
+    disque.save("output/disque.png");
+}
+
 // Exo 014 **
 void mosaic(sil::Image modele, int value)
 {
@@ -168,6 +225,7 @@ int main()
     sil::Image image{"images/logo.png"};
     sil::Image imageNoire{300, 200};
     sil::Image image90deg{345, 300};
+    sil::Image disque{500, 500};
     // greenImage(image);
     // swapRedandBlue(image);
     // blackAndWhite(image);
@@ -177,5 +235,7 @@ int main()
     // imageBruitee(image);
     // imageLuminosity(image);
     // rgbSplit(image);
-    mosaic(image, 5);
+    // createDisc(disque, 500);
+    createCircle(disque, 500, 5);
+    // mosaic(image, 5);
 }
