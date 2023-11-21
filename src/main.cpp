@@ -107,8 +107,8 @@ void rgbSplit(sil::Image image)
             else
                 modele.pixel(x, y).r = image.pixel(x - 20, y).r;
 
-            if (x > image.width())
-                modele.pixel(x, y).r = image.pixel(image.width(), y).r;
+            if (x + 20 >= image.width())
+                modele.pixel(x, y).b = image.pixel(image.width() - 1, y).b;
             else
                 modele.pixel(x, y).b = image.pixel(x + 20, y).b;
 
@@ -130,6 +130,38 @@ void imageLuminosity(sil::Image image)
     image.save("output/logo-luminosity.png");
 }
 
+// Exo 014 **
+void mosaic(sil::Image modele, int value)
+{
+    int height = modele.height();
+    int width = modele.width();
+    sil::Image mosaicResult{width, height};
+
+    for (int i = 0; i < value; i++)
+    {
+        for (int j = 0; j < value; j++)
+        {
+            for (int x = 0; x < mosaicResult.width() / value; x++)
+            {
+                for (int y = 0; y < mosaicResult.height() / value; y++)
+                {
+                    int x2 = value * x;
+                    int y2 = value * y;
+                    mosaicResult.pixel(x + (i * mosaicResult.width() / value), y + (j * mosaicResult.height() / value)) = (modele.pixel(x2, y2) + modele.pixel(x2 + 1, y2 + 1) + modele.pixel(x2 + 1, y2) + modele.pixel(x2, y2 + 1)) / 4.f;
+                }
+            }
+        }
+    }
+
+    mosaicResult.save("output/logo-mosaic.png");
+}
+
+// Exo 015 **
+void mosaicMirror(sil::Image modele, int value)
+{
+    sil::Image mosaicResult{modele.height(), modele.height()};
+}
+
 // ==== MAIN ====
 int main()
 {
@@ -144,5 +176,6 @@ int main()
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
-    rgbSplit(image);
+    // rgbSplit(image);
+    mosaic(image, 5);
 }
