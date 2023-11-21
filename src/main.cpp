@@ -246,29 +246,33 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
 
                     if (j % 2 == 0 && i % 2 != 0)
                     {
-                        std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel((mosaic.width() - 1) - coordX, coordY));
+
+                        std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel(mosaic.width() - coordX - 1, coordY));
                     }
                     else if (j % 2 != 0 && i % 2 == 0)
                     {
-                        std::swap(mosaic.pixel(coordX, (mosaic.height() - 1) - coordY), mosaicResult.pixel(coordX, coordY));
+                        std::swap(mosaic.pixel(coordX, mosaic.height() - coordY - 1), mosaicResult.pixel(coordX, coordY));
                     }
                 }
             }
         }
     }
-    mosaicResult.save("output/logo-mosaicMirror2.png");
+    mosaicResult.save("output/logo-mosaicMirror.png");
 }
+
+// -------------- Exo 018 ** --------------*
+void glitch() {}
 
 // -------------- Exo 019 ***+* --------------
 void trimage(sil::Image photo)
 {
-const int bayer_n = 4;
-float bayer_matrix_4x4[][bayer_n] = {
-    {    -0.5,       0,  -0.375,   0.125 },
-    {    0.25,   -0.25,   0.375, - 0.125 },
-    { -0.3125,  0.1875, -0.4375,  0.0625 },
-    {  0.4375, -0.0625,  0.3125, -0.1875 },
-};
+    const int bayer_n = 4;
+    float bayer_matrix_4x4[][bayer_n] = {
+        {-0.5, 0, -0.375, 0.125},
+        {0.25, -0.25, 0.375, -0.125},
+        {-0.3125, 0.1875, -0.4375, 0.0625},
+        {0.4375, -0.0625, 0.3125, -0.1875},
+    };
 
     for (int x = 0; x < photo.width(); x++)
     {
@@ -309,6 +313,6 @@ int main()
     // createCircle(disque, 130, 5);
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
-    trimage(photo);
-    // mosaicMirror(mosaic(image, 5), 5);
+    // trimage(photo);
+    // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE :clown:
 }
