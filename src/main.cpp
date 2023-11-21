@@ -186,8 +186,8 @@ void rosace(sil::Image disque, int r, int n)
     disque.save("output/rosace.png");
 }
 
-// -------------- Exo 014 ** --------------
-void mosaic(sil::Image modele, int value)
+// Exo 014 **
+sil::Image mosaic(sil::Image modele, int value)
 {
     int height = modele.height();
     int width = modele.width();
@@ -208,12 +208,12 @@ void mosaic(sil::Image modele, int value)
             }
         }
     }
-
     mosaicResult.save("output/logo-mosaic.png");
+    return mosaicResult;
 }
 
-// -------------- Exo 015 ** --------------
-void mosaicMirror(sil::Image modele, int value)
+// -------------- Exo 015 ** --------------*
+void mosaicMirror(sil::Image mosaic, int nbMosaic)
 {
     sil::Image mosaicResult{modele.height(), modele.height()};
 }
@@ -265,9 +265,10 @@ int main()
     // imageLuminosity(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
-    // createCircle(disque, 130, 5);
+    // // createCircle(disque, 130, 5);
     // rosace(disque, 150, 6);
     // mosaic(image, 5);
+    mosaicMirror(mosaic(image, 5), 5);
     // rosace(disque, 100, 6);
     trimage(image);
 }
