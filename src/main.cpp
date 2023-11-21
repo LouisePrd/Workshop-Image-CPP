@@ -131,7 +131,8 @@ void imageLuminosity(sil::Image image)
 }
 
 // -------------- Exo 011 ** --------------
-void createDisc(sil::Image disque, int r) {
+void createDisc(sil::Image disque, int r)
+{
     int x0 = disque.width() / 2;
     int y0 = disque.height() / 2;
     for (int x = 0; x < disque.width(); x++)
@@ -150,13 +151,14 @@ void createDisc(sil::Image disque, int r) {
 }
 
 // -------------- Exo 012 * --------------
-sil::Image createCircle(sil::Image disque, int x0, int y0, int r, int thickness) {
+sil::Image createCircle(sil::Image disque, int x0, int y0, int r, int thickness)
+{
     // int x0 = disque.width() / 2;
     // int y0 = disque.height() / 2;
 
     for (int x = 0; x < disque.width(); x++)
     {
-        for(int y= 0; y < disque.height(); y++)
+        for (int y = 0; y < disque.height(); y++)
         {
             int dx = x - x0;
             int dy = y - y0;
@@ -186,7 +188,7 @@ void rosace(sil::Image disque, int r, int n)
     disque.save("output/rosace.png");
 }
 
-// Exo 014 **
+// -------------- Exo 014 *** --------------
 sil::Image mosaic(sil::Image modele, int value)
 {
     int height = modele.height();
@@ -210,45 +212,60 @@ sil::Image mosaic(sil::Image modele, int value)
     }
     mosaicResult.save("output/logo-mosaic.png");
     return mosaicResult;
+    return mosaicResult;
 }
 
 // -------------- Exo 015 ** --------------*
 void mosaicMirror(sil::Image mosaic, int nbMosaic)
 {
-    sil::Image mosaicResult{modele.height(), modele.height()};
-}
+    sil::Image mosaicResult{mosaic.width(), mosaic.height()};
+    int sizeW = mosaic.width() / nbMosaic;
+    int sizeH = mosaic.height() / nbMosaic;
 
-// -------------- Exo 019 ***+* --------------
-void trimage(sil::Image image)
-{
-const int bayer_n = 6;
-float bayer_matrix_4x4[][bayer_n] = {
-    {    -0.5,       0,  -0.375,   0.125 },
-    {    0.25,   -0.25,   0.375, - 0.125 },
-    { -0.3125,  0.1875, -0.4375,  0.0625 },
-    {  0.4375, -0.0625,  0.3125, -0.1875 },
-};
-
-    for (int x = 0; x < image.width(); x++)
+    for (int i = 0; i < nbMosaic; i++)
     {
-        for (int y = 0; y < image.height(); y++)
+        for (int j = 0; j < nbMosaic; j++)
         {
-            float value = bayer_matrix_4x4[y % bayer_n][x % bayer_n];
-            if (image.pixel(x, y).r > value)
+            for (int x = 0; x < sizeW; x++)
             {
-                image.pixel(x, y) = {1, 1, 1};
-            }
-            else
-            {
-                image.pixel(x, y) = {0, 0, 0};
+                for (int y = 0; y < sizeH; y++)
+                {
+                    int coordX = x + (i * sizeW);
+                    int coordY = y + (j * sizeH);
+
+                    if (j % 2 != 0)
+                    {
+                        mosaicResult.pixel(coordX, coordY) = mosaic.pixel(sizeW - x - 1, sizeH - y - 1);
+                        if (i % 2 == 0)
+                        {
+                            mosaicResult.pixel(coordX, coordY) = mosaic.pixel(sizeW - x - 1, sizeH - y - 1);
+                        }
+                    }
+                    else
+                        mosaicResult.pixel(coordX, coordY) = mosaic.pixel(coordX, coordY);
+
+                    glm::vec3 swap = mosaicResult.pixel(coordX, coordY);
+                    if (j % 2 == 0 && i % 2 != 0)
+                    {
+                        mosaicResult.pixel(coordX, coordY) = glm::vec3(5);
+                        std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel((mosaic.width() - 1) - coordX, coordY));
+                    }
+                    else if (j % 2 != 0 && i % 2 == 0)
+                    {
+                        //mosaicResult.pixel(coordX, coordY) = glm::vec3(5);
+                        // mosaicResult.pixel(coordX, coordY) = mosaic.pixel((mosaic.width() - 1) - coordX, coordY);
+                        // mosaicResult.pixel((mosaic.width() - 1) - coordX, coordY) = swap;
+                        //std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel((mosaic.width() - 1) - coordX, coordY));
+                    }
+                }
             }
         }
     }
-    image.save("output/logo-trimage.png");
+
+    mosaicResult.save("output/logo-mosaicMirror.png");
 }
 
-// ====-------------- MAIN --------------====
-
+// ==== MAIN ====
 int main()
 {
     sil::Image image{"images/logo.png"};
@@ -265,10 +282,9 @@ int main()
     // imageLuminosity(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
-    // // createCircle(disque, 130, 5);
-    // rosace(disque, 150, 6);
+    // createCircle(disque, 130, 5);
+    rosace(disque, 100, 6);
     // mosaic(image, 5);
-    mosaicMirror(mosaic(image, 5), 5);
-    // rosace(disque, 100, 6);
-    trimage(image);
+    // trimage(image);
+    //mosaicMirror(mosaic(image, 5), 5);
 }
