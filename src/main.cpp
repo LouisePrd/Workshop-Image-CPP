@@ -388,6 +388,14 @@ void convolutions(sil::Image image)
         {1.f / 9.f, 1.f / 9.f, 1.f / 9.f},
         {1.f / 9.f, 1.f / 9.f, 1.f / 9.f}};
 
+    float kernelBlurGauss[5][5] = {
+        {1.f / 256.f, 4.f / 256.f, 6.f / 256.f, 4.f / 256.f, 1.f / 256.f},
+        {4.f / 256.f, 16.f / 256.f, 24.f / 256.f, 16.f / 256.f, 4.f / 256.f},
+        {6.f / 256.f, 24.f / 256.f, 36.f / 256.f, 24.f / 256.f, 6.f / 256.f},
+        {4.f / 256.f, 16.f / 256.f, 24.f / 256.f, 16.f / 256.f, 4.f / 256.f},
+        {1.f / 256.f, 4.f / 256.f, 6.f / 256.f, 4.f / 256.f, 1.f / 256.f}};
+
+    
     float kernelOutline[3][3] = {
         {-1.f, -1.f, -1.f},
         {-1.f, 8.f, -1.f},
@@ -402,23 +410,32 @@ void convolutions(sil::Image image)
         {0.f, -1.f, 0.f},
         {-1.f, 5.f, -1.f},
         {0.f, -1.f, 0.f}};
-
+    
+    int kernelSizeX = sizeof(kernelBlur) / sizeof(kernelBlur[0]);
+    int kernelSizeY = sizeof(kernelBlur[0]) / sizeof(kernelBlur[0][0]);
 
     for (int x = 0; x < image.width(); x++)
     {
         for (int y = 0; y < image.height(); y++)
         {
-            if (x == 0 || y == 0 || x == image.width() - 1 || y == image.height() - 1)
+            if (x == 0 || y == 0 || x == image.width() - 1 || y == image.height() - 1 )
             {
                 newImage.pixel(x, y) = image.pixel(x, y);
             }
             else
             {
-                newImage.pixel(x, y) = image.pixel(x - 1, y + 1) * kernelBlur[0][0] + image.pixel(x, y + 1) * kernelBlur[0][1] + image.pixel(x + 1, y + 1) * kernelBlur[0][2] + image.pixel(x - 1, y) * kernelBlur[1][0] + image.pixel(x, y) * kernelBlur[1][1] + image.pixel(x + 1, y) * kernelBlur[1][2] + image.pixel(x - 1, y - 1) * kernelBlur[2][0] + image.pixel(x, y - 1) * kernelBlur[2][1] + image.pixel(x + 1, y - 1) * kernelBlur[2][2];
+                for (int i = 0; i < kernelSizeX; i++)
+                {
+                    for (int j = 0; j < kernelSizeY; j++)
+                    {
+                        if (x+i-1 < image.width() && y+j-1 < image.height() && x+i-1 >= 0 && y+j-1 >= 0)
+                            newImage.pixel(x, y) += image.pixel(x + i - 1, y + j - 1) * kernelBlur[i][j];
+                    }
+                }
             }
         }
     }
-    newImage.save("output/convolutions/logo-blur.png");
+    newImage.save("output/convolutions/logo-blurTest.png");
 }
 
 // ==== MAIN ====
@@ -446,6 +463,6 @@ int main()
     // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE
     // // glitch(image);
     // mandelbrot(disque); // PERFECTIBLE
-    // vortex(image); WORK IN PROGRESS LWIZ
+    // vortex(image); WORK IN PROGRESS
     convolutions(image);
 }
