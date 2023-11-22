@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include "random.hpp"
+#include <complex>
 
 // -------------- Exo 001 * --------------
 void greenImage(sil::Image image)
@@ -287,8 +288,48 @@ void glitch(sil::Image image)
     image.save("output/logo-glitch.png");
 }
 
-// -------------- Exo 019 ***+* --------------
-void trimage(sil::Image photo)
+// -------------- Exo 019 *** --------------
+void mandelbrot(sil::Image disque)
+{
+    const int max = 25;
+    const int width = disque.width();
+    const int height = disque.height();
+    const float scale = 1.5;
+    const float zoom = 0.5;
+    const float moveX = 0.0;
+    const float moveY = -0.3;
+    float white = 0.1;
+
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+
+        {
+            std::complex<float> point((x - width / 1.5) / (width / 1.5) * scale - moveX, (y - height / 1.5) / (height / 1.5) * scale - moveY);
+            std::complex<float> z(0, 0);
+            int nb_iter = 0;
+            while (abs(z) < 2 && nb_iter <= max)
+            {
+                z = z * z + point;
+                nb_iter++;
+
+            }
+            if (nb_iter < max)
+            {
+                disque.pixel(x, y) = {0, 0, 0};
+            }
+            else
+            {
+                disque.pixel(x, y) = {white, white, white};
+                white += 0.0001;
+            }
+        }
+    }
+    disque.save("output/mandelbrot.png");
+}
+
+// -------------- Exo 021 ***+* --------------
+void tramage(sil::Image photo)
 {
     const int bayer_n = 4;
     float bayer_matrix_4x4[][bayer_n] = {
@@ -313,7 +354,7 @@ void trimage(sil::Image photo)
             }
         }
     }
-    photo.save("output/photo-trimage.png");
+    photo.save("output/photo-tramage.png");
 }
 
 // ==== MAIN ====
@@ -337,7 +378,8 @@ int main()
     // createCircle(disque, 130, 5);
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
-    // trimage(photo);
+    // tramage(photo);
     // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE :clown:
-    glitch(image);
+    // glitch(image);
+    mandelbrot(disque); // PERFECTIBLE
 }
