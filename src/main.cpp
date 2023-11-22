@@ -418,7 +418,6 @@ void convolutions(sil::Image image)
             }
         }
     }
-
     newImage.save("output/convolutions/logo-blur.png");
 }
 
