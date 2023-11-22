@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include "random.hpp"
 #include <complex>
+#include <glm/gtx/matrix_transform_2d.hpp>
 
 // -------------- Exo 001 * --------------
 void greenImage(sil::Image image)
@@ -108,10 +109,10 @@ void rgbSplit(sil::Image image)
             else
                 modele.pixel(x, y).r = image.pixel(x - 20, y).r;
 
-            if (x + 20 >= image.width())
+            if (x + 10 >= image.width())
                 modele.pixel(x, y).b = image.pixel(image.width() - 1, y).b;
             else
-                modele.pixel(x, y).b = image.pixel(x + 20, y).b;
+                modele.pixel(x, y).b = image.pixel(x + 10, y).b;
 
             modele.pixel(x, y).g = image.pixel(x, y).g;
         }
@@ -312,7 +313,6 @@ void mandelbrot(sil::Image disque)
             {
                 z = z * z + point;
                 nb_iter++;
-
             }
             if (nb_iter < max)
             {
@@ -329,6 +329,28 @@ void mandelbrot(sil::Image disque)
 }
 
 // -------------- Exo 021 ***+* --------------
+glm::vec2 rotated(glm::vec2 point, glm::vec2 center_of_rotation, float angle)
+{
+    return glm::vec2{glm::rotate(glm::mat3{1.f}, angle) * glm::vec3{point - center_of_rotation, 0.f}} + center_of_rotation;
+}
+void vortex(sil::Image image)
+{
+    float angle = 0.f;
+    float radius = 0.f;
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            glm::vec2 center = {image.width() / 2.f, image.height() / 2.f};
+            glm::vec2 point = {x, y};
+            glm::vec2 rotatedPoint = rotated(point, center, angle);
+        }
+    }
+
+    image.save("output/logo-vortex.png");
+}
+
+// -------------- Exo 020 ***+* --------------
 void tramage(sil::Image photo)
 {
     const int bayer_n = 4;
@@ -357,6 +379,49 @@ void tramage(sil::Image photo)
     photo.save("output/photo-tramage.png");
 }
 
+void convolutions(sil::Image image)
+{
+    sil::Image newImage{image.width(), image.height()};
+
+    float kernelBlur[3][3] = {
+        {1.f / 9.f, 1.f / 9.f, 1.f / 9.f},
+        {1.f / 9.f, 1.f / 9.f, 1.f / 9.f},
+        {1.f / 9.f, 1.f / 9.f, 1.f / 9.f}};
+
+    float kernelOutline[3][3] = {
+        {-1.f, -1.f, -1.f},
+        {-1.f, 8.f, -1.f},
+        {-1.f, -1.f, -1.f}};
+
+    float kernelEmboss[3][3] = {
+        {-2.f, -1.f, 0.f},
+        {-1.f, 1.f, 1.f},
+        {0.f, 1.f, 2.f}};
+    
+    float kernelSharpen[3][3] = {
+        {0.f, -1.f, 0.f},
+        {-1.f, 5.f, -1.f},
+        {0.f, -1.f, 0.f}};
+
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            if (x == 0 || y == 0 || x == image.width() - 1 || y == image.height() - 1)
+            {
+                newImage.pixel(x, y) = image.pixel(x, y);
+            }
+            else
+            {
+                newImage.pixel(x, y) = image.pixel(x - 1, y + 1) * kernelBlur[0][0] + image.pixel(x, y + 1) * kernelBlur[0][1] + image.pixel(x + 1, y + 1) * kernelBlur[0][2] + image.pixel(x - 1, y) * kernelBlur[1][0] + image.pixel(x, y) * kernelBlur[1][1] + image.pixel(x + 1, y) * kernelBlur[1][2] + image.pixel(x - 1, y - 1) * kernelBlur[2][0] + image.pixel(x, y - 1) * kernelBlur[2][1] + image.pixel(x + 1, y - 1) * kernelBlur[2][2];
+            }
+        }
+    }
+
+    newImage.save("output/convolutions/logo-blur.png");
+}
+
 // ==== MAIN ====
 int main()
 {
@@ -379,7 +444,9 @@ int main()
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
     // tramage(photo);
-    // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE :clown:
-    // glitch(image);
-    mandelbrot(disque); // PERFECTIBLE
+    // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE
+    // // glitch(image);
+    // mandelbrot(disque); // PERFECTIBLE
+    // vortex(image); WORK IN PROGRESS LWIZ
+    convolutions(image);
 }
