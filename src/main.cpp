@@ -212,7 +212,6 @@ sil::Image mosaic(sil::Image modele, int value)
     }
     mosaicResult.save("output/logo-mosaic.png");
     return mosaicResult;
-    return mosaicResult;
 }
 
 // -------------- Exo 015 ** --------------*
@@ -246,7 +245,6 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
 
                     if (j % 2 == 0 && i % 2 != 0)
                     {
-
                         std::swap(mosaicResult.pixel(coordX, coordY), mosaic.pixel(mosaic.width() - coordX - 1, coordY));
                     }
                     else if (j % 2 != 0 && i % 2 == 0)
@@ -261,7 +259,33 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
 }
 
 // -------------- Exo 018 ** --------------*
-void glitch() {}
+void glitch(sil::Image image)
+{
+
+    int nbGlich = random_int(0, 200);
+
+    for (int k = 0; k < nbGlich; k++)
+    {
+        int x = random_int(0, image.width());
+        int x2 = random_int(0, image.width());
+        int y = random_int(0, image.height());
+        int y2 = random_int(0, image.height());
+
+        int widthGlitch = random_int(0, 50);
+        int heightGlitch = random_int(0, 10);
+
+        for (int i = 0; i < widthGlitch; i++)
+        {
+            for (int j = 0; j < heightGlitch; j++)
+            {
+                if (x + i < image.width() && y + j < image.height() && x2 + i < image.width() && y2 + j < image.height())
+                    image.pixel(x + i, y + j) = image.pixel(x2 + i, y2 + j);
+            }
+        }
+    }
+
+    image.save("output/logo-glitch.png");
+}
 
 // -------------- Exo 019 ***+* --------------
 void trimage(sil::Image photo)
@@ -315,4 +339,5 @@ int main()
     // mosaic(image, 5);
     // trimage(photo);
     // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE :clown:
+    glitch(image);
 }
