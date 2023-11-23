@@ -100,11 +100,14 @@ void imageBruitee(sil::Image image)
 void rotate90(sil::Image image)
 {
     sil::Image newImage{image.height(), image.width()};
+
     for (int x = 0; x < image.width(); x++)
     {
         for (int y = 0; y < image.height(); y++)
         {
-            newImage.pixel(x, y) = image.pixel(y, x);
+            int newCoordinateX = y;
+            int newCoordinateY = image.width() - x - 1;
+            newImage.pixel(newCoordinateX, newCoordinateY) = image.pixel(x, y);
         }
     }
     newImage.save("output/logo-rotate90.png");
@@ -636,7 +639,7 @@ int main()
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
-    // rotate90(image);
+    rotate90(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
     // createCircle(disque, 130, 5);
@@ -649,6 +652,6 @@ int main()
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
     // convolutions(image);
-    differencesGauss(photoBlurV1, photoBlurV2);
+    // differencesGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
 }
