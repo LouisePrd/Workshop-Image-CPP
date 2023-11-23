@@ -472,6 +472,74 @@ void differencesGaussienne(sil::Image imageBlur, sil::Image imageBlur2)
     resultGauss.save("output/convolutions/diffGauss.png");
 }
 
+// -------------- Exo 021 ***** --------------
+void kmeans(sil::Image image, int k) {
+    // Get image dimensions
+    int width = image.width();
+    int height = image.height();
+    
+    // Initialize centroids
+    std::vector<glm::vec3> centroids(k);
+    for (int i = 0; i < k; i++) {
+        centroids[i] = image.pixel(random_int(0, width), random_int(0, height));
+    }
+    
+    // Iterate until convergence
+    bool converged = false;
+    while (!converged) {
+        // Assign pixels to clusters
+        std::vector<std::vector<glm::vec3>> clusters(k);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                glm::vec3 pixel = image.pixel(x, y);
+                int closestCentroid = 0;
+                float minDistance = glm::distance(pixel, centroids[0]);
+                for (int i = 1; i < k; i++) {
+                    float distance = glm::distance(pixel, centroids[i]);
+                    if (distance < minDistance) {
+                        closestCentroid = i;
+                        minDistance = distance;
+                    }
+                }
+                clusters[closestCentroid].push_back(pixel);
+            }
+        }
+
+        // Update centroids
+        converged = true;
+        for (int i = 0; i < k; i++) {
+            glm::vec3 sum(0.f);
+            for (const glm::vec3& pixel : clusters[i]) {
+                sum += pixel;
+            }
+            glm::vec3 newCentroid = sum / static_cast<float>(clusters[i].size());
+            if (newCentroid != centroids[i]) {
+                centroids[i] = newCentroid;
+                converged = false;
+            }
+        }
+    }
+    
+    // Assign new colors to pixels
+    for (int x = 0; x < width; x++) {
+        for (int y = 0; y < height; y++) {
+            glm::vec3 pixel = image.pixel(x, y);
+            int closestCentroid = 0;
+            float minDistance = glm::distance(pixel, centroids[0]);
+            for (int i = 1; i < k; i++) {
+                float distance = glm::distance(pixel, centroids[i]);
+                if (distance < minDistance) {
+                    closestCentroid = i;
+                    minDistance = distance;
+                }
+            }
+            image.pixel(x, y) = centroids[closestCentroid];
+        }
+    }
+    
+    image.save("output/photo-kmeans.png");
+}
+
 // ==== MAIN ====
 int main()
 {
@@ -501,5 +569,6 @@ int main()
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
     // convolutions(image);
-    differencesGaussienne(photoBlurV1, photoBlurV2);
+    // differencesGaussienne(photoBlurV1, photoBlurV2);
+    kmeans(photo, 2); // could be 2, 3, or 16
 }
