@@ -97,6 +97,20 @@ void imageBruitee(sil::Image image)
 }
 
 // -------------- Exo 008 --------------
+void rotate90(sil::Image image)
+{
+    sil::Image newImage{image.height(), image.width()};
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            newImage.pixel(x, y) = image.pixel(y, x);
+        }
+    }
+    newImage.save("output/logo-rotate90.png");
+}
+
+// -------------- Exo 009 --------------
 void rgbSplit(sil::Image image)
 {
     sil::Image modele{image.width(), image.height()};
@@ -121,7 +135,7 @@ void rgbSplit(sil::Image image)
     modele.save("output/logo-split.png");
 }
 
-// -------------- Exo 009 ** --------------
+// -------------- Exo 010 ** --------------
 void imageLuminosity(sil::Image image)
 {
     for (glm::vec3 &color : image.pixels())
@@ -477,26 +491,12 @@ void convolutions(sil::Image image)
 }
 
 // -------------- Exo 024 ***+* --------------
-sil::Image contrast(sil::Image photoFaible)
+sil::Image contrast(sil::Image photoFaible, float seuil)
 {
-    float min = 1.f;
-    float max = 0.f;
     for (glm::vec3 &color : photoFaible.pixels())
     {
         float greyLevel = (color.r + color.g + color.b) / 3;
-        if (greyLevel < min)
-        {
-            min = greyLevel;
-        }
-        if (greyLevel > max)
-        {
-            max = greyLevel;
-        }
-    }
-    for (glm::vec3 &color : photoFaible.pixels())
-    {
-        float greyLevel = (color.r + color.g + color.b) / 3;
-        if (greyLevel < (min + max) / 2)
+        if (greyLevel < seuil)
         {
             color = {0, 0, 0};
         }
@@ -512,7 +512,7 @@ sil::Image contrast(sil::Image photoFaible)
 void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
 {
     sil::Image resultGauss{imageBlur.width(), imageBlur.height()};
-    float tau = 0.3f;
+    float tau = 5.f;
 
     for (int x = 0; x < imageBlur.width(); ++x)
     {
@@ -526,7 +526,7 @@ void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
         }
     }
 
-    resultGauss = contrast(resultGauss);
+    resultGauss = contrast(resultGauss, 0.25f);
     resultGauss.save("output/convolutions/diffGauss.png");
 }
 
@@ -636,18 +636,19 @@ int main()
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
+    // rotate90(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
     // createCircle(disque, 130, 5);
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
     // tramage(photo);
+    // normalizeHisto(photoFaible);
     // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE
     // glitch(image);
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
     // convolutions(image);
-    // differencesGauss(photoBlurV1, photoBlurV2);
+    differencesGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
-    normalizeHisto(photoFaible);
 }
