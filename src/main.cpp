@@ -381,6 +381,41 @@ void tramage(sil::Image photo)
     photo.save("output/photo-tramage.png");
 }
 
+// -------------- Exo 020 ***+* --------------
+void normalizeHisto(sil::Image image)
+{
+    glm::vec3 max = {0, 0, 0};
+    glm::vec3 min = {1, 1, 1};
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            glm::vec3 color = image.pixel(x, y);
+            float moyenne = (color.r + color.g + color.b) / 3;
+            float moyenneMin = (min.r + min.g + min.b) / 3;
+            float moyenneMax = (max.r + max.g + max.b) / 3;
+            if (moyenne < moyenneMin)
+            {
+                min = color;
+            }
+            if (moyenne > moyenneMax)
+            {
+                max = color;
+            }
+        }
+    }
+
+    for (glm::vec3 &color : image.pixels())
+    {
+        float moyenne = (color.r + color.g + color.b) / 3;
+        color = (color - min) / (max - min);
+    }
+
+    image.save("output/photo-normalizeHisto.png");
+}
+
+// -------------- Exo 021 ***+* --------------
 void convolutions(sil::Image image)
 {
     sil::Image newImage{image.width(), image.height()};
@@ -397,22 +432,19 @@ void convolutions(sil::Image image)
         {4.f / 256.f, 16.f / 256.f, 24.f / 256.f, 16.f / 256.f, 4.f / 256.f},
         {1.f / 256.f, 4.f / 256.f, 6.f / 256.f, 4.f / 256.f, 1.f / 256.f}};
 
-    float kernelOutline[3][3] = {
-        {-1.f, -1.f, -1.f},
-        {-1.f, 8.f, -1.f},
-        {-1.f, -1.f, -1.f}};
-
+    // -------------- Exo 022 ***+* --------------
+    // 3 kernels for emboss, outline and sharpen
     float kernelEmboss[3][3] = {
         {-2.f, -1.f, 0.f},
         {-1.f, 1.f, 1.f},
         {0.f, 1.f, 2.f}};
 
-    float kernelSharpen[3][3] = {
-        {0.f, -1.f, 0.f},
-        {-1.f, 5.f, -1.f},
-        {0.f, -1.f, 0.f}};
+    float kernelOutline[3][3] = {
+        {-1.f, -1.f, -1.f},
+        {-1.f, 8.f, -1.f},
+        {-1.f, -1.f, -1.f}};
 
-    float kernelContrast[3][3] = {
+    float kernelSharpen[3][3] = {
         {0.f, -1.f, 0.f},
         {-1.f, 5.f, -1.f},
         {0.f, -1.f, 0.f}};
@@ -444,10 +476,43 @@ void convolutions(sil::Image image)
     newImage.save("output/convolutions/logo-blur.png");
 }
 
-void differencesGaussienne(sil::Image imageBlur, sil::Image imageBlur2)
+// -------------- Exo 024 ***+* --------------
+sil::Image contrast(sil::Image photoFaible)
+{
+    float min = 1.f;
+    float max = 0.f;
+    for (glm::vec3 &color : photoFaible.pixels())
+    {
+        float greyLevel = (color.r + color.g + color.b) / 3;
+        if (greyLevel < min)
+        {
+            min = greyLevel;
+        }
+        if (greyLevel > max)
+        {
+            max = greyLevel;
+        }
+    }
+    for (glm::vec3 &color : photoFaible.pixels())
+    {
+        float greyLevel = (color.r + color.g + color.b) / 3;
+        if (greyLevel < (min + max) / 2)
+        {
+            color = {0, 0, 0};
+        }
+        else
+        {
+            color = {1, 1, 1};
+        }
+    }
+
+    return photoFaible;
+}
+
+void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
 {
     sil::Image resultGauss{imageBlur.width(), imageBlur.height()};
-    float tau = 1.4f;
+    float tau = 0.3f;
 
     for (int x = 0; x < imageBlur.width(); ++x)
     {
@@ -455,48 +520,53 @@ void differencesGaussienne(sil::Image imageBlur, sil::Image imageBlur2)
         {
             glm::vec3 pixel1 = imageBlur.pixel(x, y);
             glm::vec3 pixel2 = imageBlur2.pixel(x, y);
-            glm::vec3 resultPixel =  (1.f + tau) * pixel2 - pixel1 * tau;
+            glm::vec3 resultPixel = (1.f + tau) * pixel2 - pixel1 * tau;
 
             resultGauss.pixel(x, y) = resultPixel;
         }
     }
 
-    // black and white
-    for (glm::vec3 &color : resultGauss.pixels())
-    {
-        float greyLevel = (color.r + color.g + color.b) / 3;
-        glm::vec3 newcolor(greyLevel);
-        color = newcolor;
-    }
-
+    resultGauss = contrast(resultGauss);
     resultGauss.save("output/convolutions/diffGauss.png");
 }
 
+// -------------- Exo 025 ***** --------------
+void triPixel(sil::Image image)
+{
+}
+
 // -------------- Exo 021 ***** --------------
-void kmeans(sil::Image image, int k) {
+void kmeans(sil::Image image, int k)
+{
     // Get image dimensions
     int width = image.width();
     int height = image.height();
-    
+
     // Initialize centroids
     std::vector<glm::vec3> centroids(k);
-    for (int i = 0; i < k; i++) {
+    for (int i = 0; i < k; i++)
+    {
         centroids[i] = image.pixel(random_int(0, width), random_int(0, height));
     }
-    
+
     // Iterate until convergence
     bool converged = false;
-    while (!converged) {
+    while (!converged)
+    {
         // Assign pixels to clusters
         std::vector<std::vector<glm::vec3>> clusters(k);
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
                 glm::vec3 pixel = image.pixel(x, y);
                 int closestCentroid = 0;
                 float minDistance = glm::distance(pixel, centroids[0]);
-                for (int i = 1; i < k; i++) {
+                for (int i = 1; i < k; i++)
+                {
                     float distance = glm::distance(pixel, centroids[i]);
-                    if (distance < minDistance) {
+                    if (distance < minDistance)
+                    {
                         closestCentroid = i;
                         minDistance = distance;
                     }
@@ -507,28 +577,35 @@ void kmeans(sil::Image image, int k) {
 
         // Update centroids
         converged = true;
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++)
+        {
             glm::vec3 sum(0.f);
-            for (const glm::vec3& pixel : clusters[i]) {
+            for (const glm::vec3 &pixel : clusters[i])
+            {
                 sum += pixel;
             }
             glm::vec3 newCentroid = sum / static_cast<float>(clusters[i].size());
-            if (newCentroid != centroids[i]) {
+            if (newCentroid != centroids[i])
+            {
                 centroids[i] = newCentroid;
                 converged = false;
             }
         }
     }
-    
+
     // Assign new colors to pixels
-    for (int x = 0; x < width; x++) {
-        for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+        {
             glm::vec3 pixel = image.pixel(x, y);
             int closestCentroid = 0;
             float minDistance = glm::distance(pixel, centroids[0]);
-            for (int i = 1; i < k; i++) {
+            for (int i = 1; i < k; i++)
+            {
                 float distance = glm::distance(pixel, centroids[i]);
-                if (distance < minDistance) {
+                if (distance < minDistance)
+                {
                     closestCentroid = i;
                     minDistance = distance;
                 }
@@ -536,7 +613,7 @@ void kmeans(sil::Image image, int k) {
             image.pixel(x, y) = centroids[closestCentroid];
         }
     }
-    
+
     image.save("output/photo-kmeans.png");
 }
 
@@ -545,6 +622,7 @@ int main()
 {
     sil::Image image{"images/logo.png"};
     sil::Image photo{"images/photo.jpg"};
+    sil::Image photoFaible{"images/photo_faible_contraste.jpg"};
     sil::Image photoBlurV1{"output/convolutions/photo-kernel5.png"};
     sil::Image photoBlurV2{"output/convolutions/photo-blur1.png"};
     sil::Image imageNoire{300, 200};
@@ -569,6 +647,7 @@ int main()
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
     // convolutions(image);
-    // differencesGaussienne(photoBlurV1, photoBlurV2);
-    kmeans(photo, 2); // could be 2, 3, or 16
+    // differencesGauss(photoBlurV1, photoBlurV2);
+    // kmeans(photo, 2); // could be 2, 3, or 16
+    normalizeHisto(photoFaible);
 }
