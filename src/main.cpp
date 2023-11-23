@@ -105,8 +105,8 @@ void rotate90(sil::Image image)
     {
         for (int y = 0; y < image.height(); y++)
         {
-            int newCoordinateX = y;
-            int newCoordinateY = image.width() - x - 1;
+            int newCoordinateX = image.height() - y - 1;
+            int newCoordinateY = x;
             newImage.pixel(newCoordinateX, newCoordinateY) = image.pixel(x, y);
         }
     }
