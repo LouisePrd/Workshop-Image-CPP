@@ -64,6 +64,7 @@ void gradient(sil::Image &image)
             image.pixel(x, y) = glm::vec3(value);
         }
     }
+
     image.save("output/logo-gradient.png");
 }
 
@@ -329,6 +330,7 @@ void mandelbrot(sil::Image disque)
 }
 
 // -------------- Exo 021 ***+* --------------
+// WORK IN PROGRESS (pas terminé)
 glm::vec2 rotated(glm::vec2 point, glm::vec2 center_of_rotation, float angle)
 {
     return glm::vec2{glm::rotate(glm::mat3{1.f}, angle) * glm::vec3{point - center_of_rotation, 0.f}} + center_of_rotation;
@@ -395,7 +397,6 @@ void convolutions(sil::Image image)
         {4.f / 256.f, 16.f / 256.f, 24.f / 256.f, 16.f / 256.f, 4.f / 256.f},
         {1.f / 256.f, 4.f / 256.f, 6.f / 256.f, 4.f / 256.f, 1.f / 256.f}};
 
-    
     float kernelOutline[3][3] = {
         {-1.f, -1.f, -1.f},
         {-1.f, 8.f, -1.f},
@@ -405,12 +406,17 @@ void convolutions(sil::Image image)
         {-2.f, -1.f, 0.f},
         {-1.f, 1.f, 1.f},
         {0.f, 1.f, 2.f}};
-    
+
     float kernelSharpen[3][3] = {
         {0.f, -1.f, 0.f},
         {-1.f, 5.f, -1.f},
         {0.f, -1.f, 0.f}};
-    
+
+    float kernelContrast[3][3] = {
+        {0.f, -1.f, 0.f},
+        {-1.f, 5.f, -1.f},
+        {0.f, -1.f, 0.f}};
+
     int kernelSizeX = sizeof(kernelBlur) / sizeof(kernelBlur[0]);
     int kernelSizeY = sizeof(kernelBlur[0]) / sizeof(kernelBlur[0][0]);
 
@@ -418,7 +424,7 @@ void convolutions(sil::Image image)
     {
         for (int y = 0; y < image.height(); y++)
         {
-            if (x == 0 || y == 0 || x == image.width() - 1 || y == image.height() - 1 )
+            if (x == 0 || y == 0 || x == image.width() - 1 || y == image.height() - 1)
             {
                 newImage.pixel(x, y) = image.pixel(x, y);
             }
@@ -428,14 +434,42 @@ void convolutions(sil::Image image)
                 {
                     for (int j = 0; j < kernelSizeY; j++)
                     {
-                        if (x+i-1 < image.width() && y+j-1 < image.height() && x+i-1 >= 0 && y+j-1 >= 0)
+                        if (x + i - 1 < image.width() && y + j - 1 < image.height() && x + i - 1 >= 0 && y + j - 1 >= 0)
                             newImage.pixel(x, y) += image.pixel(x + i - 1, y + j - 1) * kernelBlur[i][j];
                     }
                 }
             }
         }
     }
-    newImage.save("output/convolutions/logo-blurTest.png");
+    newImage.save("output/convolutions/logo-blur.png");
+}
+
+void differencesGaussienne(sil::Image imageBlur, sil::Image imageBlur2)
+{
+    sil::Image resultGauss{imageBlur.width(), imageBlur.height()};
+    float tau = 1.4f;
+
+    for (int x = 0; x < imageBlur.width(); ++x)
+    {
+        for (int y = 0; y < imageBlur.height(); ++y)
+        {
+            glm::vec3 pixel1 = imageBlur.pixel(x, y);
+            glm::vec3 pixel2 = imageBlur2.pixel(x, y);
+            glm::vec3 resultPixel =  (1.f + tau) * pixel2 - pixel1 * tau;
+
+            resultGauss.pixel(x, y) = resultPixel;
+        }
+    }
+
+    // black and white
+    for (glm::vec3 &color : resultGauss.pixels())
+    {
+        float greyLevel = (color.r + color.g + color.b) / 3;
+        glm::vec3 newcolor(greyLevel);
+        color = newcolor;
+    }
+
+    resultGauss.save("output/convolutions/diffGauss.png");
 }
 
 // ==== MAIN ====
@@ -443,6 +477,8 @@ int main()
 {
     sil::Image image{"images/logo.png"};
     sil::Image photo{"images/photo.jpg"};
+    sil::Image photoBlurV1{"output/convolutions/photo-kernel5.png"};
+    sil::Image photoBlurV2{"output/convolutions/photo-blur1.png"};
     sil::Image imageNoire{300, 200};
     sil::Image image90deg{345, 300};
     sil::Image disque{500, 500};
@@ -460,9 +496,10 @@ int main()
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
     // tramage(photo);
-    // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE MAIS EN PAUSE
-    // // glitch(image);
+    // mosaicMirror(mosaic(image, 5), 5); PERFECTIBLE
+    // glitch(image);
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
-    convolutions(image);
+    // convolutions(image);
+    differencesGaussienne(photoBlurV1, photoBlurV2);
 }
