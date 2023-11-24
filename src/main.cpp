@@ -698,10 +698,9 @@ void circleWave(sil::Image disque, int r, int n)
     disque.save("output/circleWave.png");
 }
 
-void blueLevel(sil::Image image)
+void funColor(sil::Image image)
 {
-    sil::Image result{image.width(), image.height()};
-    result = image;
+    sil::Image result{image.width() * 3, image.height()};
 
     float seuil = 0.6f;
     for (int x = 0; x < image.width(); x++)
@@ -711,22 +710,25 @@ void blueLevel(sil::Image image)
             if (image.pixel(x, y).r <= seuil)
             {
                 result.pixel(x, y) = {0, 0, 0.9};
+                result.pixel(x + image.width(), y) = {0.9, 0, 0};
+                result.pixel(x + image.width()*2, y) = {0, 0.9, 0};
             }
             else if (image.pixel(x, y).b >= seuil)
             {
                 result.pixel(x, y) = {0, 1, 1};
+                result.pixel(x + image.width(), y) = {1, 0, 1};
+                result.pixel(x + image.width()*2, y) = {1, 1, 0};
             }
             else
             {
                 result.pixel(x, y) = {0, 0.5, 0.9};
+                result.pixel(x + image.width(), y) = {0.9, 0.5, 0};
+                result.pixel(x + image.width()*2, y) = {0, 0.8, 0.5};
             }
         }
     }
 
-    // rotate 190°
-    sil::Image result2{result.height(), result.width()};
-
-    result.save("output/marilyn-blue.png");
+    result.save("output/marilyn-new.png");
 }
 
 // ==== MAIN ====
@@ -764,5 +766,5 @@ int main()
     // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
     // // sortPixel(image);
-    blueLevel(image2);
+    funColor(image2);
 }
