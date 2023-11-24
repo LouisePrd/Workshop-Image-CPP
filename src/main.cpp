@@ -278,7 +278,7 @@ void mosaicMirror(sil::Image mosaic, int nbMosaic)
     mosaicResult.save("output/logo-mosaicMirror.png");
 }
 
-// -------------- Exo 018 ** --------------*
+// -------------- Exo 016 ** --------------*
 void glitch(sil::Image image)
 {
 
@@ -307,7 +307,7 @@ void glitch(sil::Image image)
     image.save("output/logo-glitch.png");
 }
 
-// -------------- Exo 019 *** --------------
+// -------------- Exo 017 *** --------------
 void mandelbrot(sil::Image disque)
 {
     const int max = 25;
@@ -346,7 +346,7 @@ void mandelbrot(sil::Image disque)
     disque.save("output/mandelbrot.png");
 }
 
-// -------------- Exo 021 ***+* --------------
+// -------------- Exo 018 ***+* --------------
 // WORK IN PROGRESS (pas terminé)
 glm::vec2 rotated(glm::vec2 point, glm::vec2 center_of_rotation, float angle)
 {
@@ -369,7 +369,7 @@ void vortex(sil::Image image)
     image.save("output/logo-vortex.png");
 }
 
-// -------------- Exo 020 ***+* --------------
+// -------------- Exo 019 ***+* --------------
 void tramage(sil::Image photo)
 {
     const int bayer_n = 4;
@@ -511,7 +511,6 @@ sil::Image contrast(sil::Image photoFaible, float seuil)
 
     return photoFaible;
 }
-
 void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
 {
     sil::Image resultGauss{imageBlur.width(), imageBlur.height()};
@@ -572,7 +571,7 @@ void triPixel(sil::Image image)
     sorted.save("output/triPixel.png");
 }
 
-// -------------- Exo 021 ***** --------------
+// -------------- Exo 027 ***** --------------
 void kmeans(sil::Image image, int k)
 {
     // Get image dimensions
