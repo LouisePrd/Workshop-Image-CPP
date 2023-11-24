@@ -656,18 +656,24 @@ void kmeans(sil::Image image, int k)
 // ========== FILTRES PERSONNALISÉS ==========
 
 // -------------- A - Circle Wave --------------
+
 void circleWave(sil::Image disque, int r, int n)
 {
+    // Calcule le centre de l'image
     int x0 = disque.width() / 2;
     int y0 = disque.height() / 2;
+
+    // Consulte chaque pixel de l'image
     for (int x = 0; x < disque.width(); x++)
     {
         for (int y = 0; y < disque.height(); y++)
         {
             int dx = x - x0;
             int dy = y - y0;
+            // Si le pixel est dans le rayon du cercle
             if (dx * dx + dy * dy <= r * r)
             {
+                // Calcule 3 angles basés sur l'arctangente du ratio dy/dx
                 float angle = atan2(dy, dx);
                 float angle2 = angle + M_PI / n;
                 float angle3 = angle - M_PI / n;
@@ -677,7 +683,8 @@ void circleWave(sil::Image disque, int r, int n)
                 int y3 = y;
                 0 + r *sin(angle3);
 
-                // Limits of circle
+                // Si le pixel est sur la limite du rayon
+                // Trace le contour du cercle
                 if (x2 >= 0 && x2 < disque.width() && y2 >= 0 && y2 < disque.height())
                 {
                     disque.pixel(x2, y2).r = 1.f;
@@ -685,7 +692,7 @@ void circleWave(sil::Image disque, int r, int n)
                     disque.pixel(x2, y2).b = 1.f;
                 }
 
-                // Fills the circle
+                // Remplis les pixels entre les 3 angles
                 if (x3 >= 0 && x3 < disque.width() && y3 >= 0 && y3 < disque.height())
                 {
                     disque.pixel(x3, y3).r = 1.f;
@@ -697,6 +704,8 @@ void circleWave(sil::Image disque, int r, int n)
     }
     disque.save("output/circleWave.png");
 }
+
+// -------------- B - Fun Color --------------
 
 void funColor(sil::Image image)
 {
@@ -765,6 +774,7 @@ int main()
     // convolutions(image);
     // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
-    // // sortPixel(image);
+    // sortPixel(image);
     funColor(image2);
+    // circleWave(disque, 130, 6);
 }
