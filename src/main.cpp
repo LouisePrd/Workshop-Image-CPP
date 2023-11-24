@@ -536,6 +536,40 @@ void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
 // -------------- Exo 025 ***** --------------
 void triPixel(sil::Image image)
 {
+    sil::Image sorted{image.width(), image.height()};
+
+    std::vector<glm::vec3> pixels = {};
+    std::vector<std::vector<glm::vec3>> sortedPixels = {};
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            pixels.push_back(image.pixel(x, y));
+        }
+        sortedPixels.push_back(pixels);
+        pixels.clear();
+    }
+
+    for (int i = 0; i < sortedPixels.size(); i++)
+    {
+        for (int j = 0; j < sortedPixels[i].size(); j++)
+        {
+            float brightness = (sortedPixels[i][j].r + sortedPixels[i][j].g + sortedPixels[i][j].b) / 3;
+            std::sort(sortedPixels[i].begin(), sortedPixels[i].end(), [brightness](glm::vec3 a, glm::vec3 b)
+            { return (a.r + a.g + a.b) / 3 < (b.r + b.g + b.b) / 3; });
+        }
+    }
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            sorted.pixel(x, y) = sortedPixels[x][y];
+        }
+    }
+
+    sorted.save("output/triPixel.png");
 }
 
 // -------------- Exo 021 ***** --------------
@@ -639,7 +673,7 @@ int main()
     // gradient(imageNoire);
     // imageBruitee(image);
     // imageLuminosity(image);
-    rotate90(image);
+    // rotate90(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
     // createCircle(disque, 130, 5);
@@ -654,4 +688,5 @@ int main()
     // convolutions(image);
     // differencesGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
+    triPixel(image);
 }
