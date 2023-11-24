@@ -653,6 +653,51 @@ void kmeans(sil::Image image, int k)
     image.save("output/photo-kmeans.png");
 }
 
+// ========== FILTRES PERSONNALISÉS ==========
+
+// -------------- A - Circle Wave --------------
+void circleWave(sil::Image disque, int r, int n)
+{
+    int x0 = disque.width() / 2;
+    int y0 = disque.height() / 2;
+    for (int x = 0; x < disque.width(); x++)
+    {
+        for (int y = 0; y < disque.height(); y++)
+        {
+            int dx = x - x0;
+            int dy = y - y0;
+            if (dx * dx + dy * dy <= r * r)
+            {
+                float angle = atan2(dy, dx);
+                float angle2 = angle + M_PI / n;
+                float angle3 = angle - M_PI / n;
+                int x2 = x0 + r * cos(angle2);
+                int y2 = y0 + r * sin(angle2);
+                int x3 = x0 + r * cos(angle3);
+                int y3 = y;
+                0 + r * sin(angle3);
+
+                // Limits of circle
+                if (x2 >= 0 && x2 < disque.width() && y2 >= 0 && y2 < disque.height())
+                {
+                    disque.pixel(x2, y2).r = 1.f;
+                    disque.pixel(x2, y2).g = 1.f;
+                    disque.pixel(x2, y2).b = 1.f;
+                }
+
+                // Fills the circle
+                if (x3 >= 0 && x3 < disque.width() && y3 >= 0 && y3 < disque.height())
+                {
+                    disque.pixel(x3, y3).r = 1.f;
+                    disque.pixel(x3, y3).g = 1.f;
+                    disque.pixel(x3, y3).b = 1.f;
+                }
+            }
+        }
+    }
+    disque.save("output/circleWave.png");
+}
+
 // ==== MAIN ====
 int main()
 {
@@ -668,8 +713,8 @@ int main()
     // swapRedandBlue(image);
     // blackAndWhite(image);
     // negativeImage(image);
-    // mirrorImage(image);
     // gradient(imageNoire);
+    // mirrorImage(image);
     // imageBruitee(image);
     // imageLuminosity(image);
     // rotate90(image);
@@ -687,5 +732,5 @@ int main()
     // convolutions(image);
     // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
-    sortPixel(image);
+    // sortPixel(image);
 }
