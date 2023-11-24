@@ -966,4 +966,11 @@ CMakeFiles/ImageEditor.dir/src/main.cpp.o: \
   /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/integer.hpp \
   /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/detail/func_integer.inl \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
-  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/lib/random.hpp
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/lib/random.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/complex \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/sstream \
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/gtx/matrix_transform_2d.hpp \
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/gtx/../mat3x3.hpp \
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/gtx/../vec2.hpp \
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/gtx/matrix_transform_2d.inl \
+  /Users/louiseperidy/Desktop/IMAC/Algo\ Prog/Workshop/workshop-image-manipulation/build/_deps/glm-src/glm/gtx/../trigonometric.hpp

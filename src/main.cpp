@@ -189,8 +189,8 @@ sil::Image createCircle(sil::Image disque, int x0, int y0, int r, int thickness)
         }
     }
     // --- if you want to draw a single circle :
-    // disque.save("output/disque.png");
-    return disque;
+    disque.save("output/disque.png");
+    // return disque;
 }
 
 // -------------- Exo 013 *** --------------
@@ -556,7 +556,7 @@ void sortPixel(sil::Image image)
         {
             float brightness = (sortedPixels[i][j].r + sortedPixels[i][j].g + sortedPixels[i][j].b) / 3;
             std::sort(sortedPixels[i].begin(), sortedPixels[i].end(), [brightness](glm::vec3 a, glm::vec3 b)
-            { return (a.r + a.g + a.b) / 3 < (b.r + b.g + b.b) / 3; });
+                      { return (a.r + a.g + a.b) / 3 < (b.r + b.g + b.b) / 3; });
         }
     }
 
@@ -675,7 +675,7 @@ void circleWave(sil::Image disque, int r, int n)
                 int y2 = y0 + r * sin(angle2);
                 int x3 = x0 + r * cos(angle3);
                 int y3 = y;
-                0 + r * sin(angle3);
+                0 + r *sin(angle3);
 
                 // Limits of circle
                 if (x2 >= 0 && x2 < disque.width() && y2 >= 0 && y2 < disque.height())
@@ -698,11 +698,43 @@ void circleWave(sil::Image disque, int r, int n)
     disque.save("output/circleWave.png");
 }
 
+void blueLevel(sil::Image image)
+{
+    sil::Image result{image.width(), image.height()};
+    result = image;
+
+    float seuil = 0.6f;
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            if (image.pixel(x, y).r <= seuil)
+            {
+                result.pixel(x, y) = {0, 0, 0.9};
+            }
+            else if (image.pixel(x, y).b >= seuil)
+            {
+                result.pixel(x, y) = {0, 1, 1};
+            }
+            else
+            {
+                result.pixel(x, y) = {0, 0.5, 0.9};
+            }
+        }
+    }
+
+    // rotate 190°
+    sil::Image result2{result.height(), result.width()};
+
+    result.save("output/marilyn-blue.png");
+}
+
 // ==== MAIN ====
 int main()
 {
     sil::Image image{"images/logo.png"};
     sil::Image photo{"images/photo.jpg"};
+    sil::Image image2{"images/marilyn.jpg"};
     sil::Image photoFaible{"images/photo_faible_contraste.jpg"};
     sil::Image photoBlurV1{"output/convolutions/photo-kernel5.png"};
     sil::Image photoBlurV2{"output/convolutions/photo-blur1.png"};
@@ -720,7 +752,6 @@ int main()
     // rotate90(image);
     // rgbSplit(image);
     // createDisc(disque, 130);
-    // createCircle(disque, 130, 5);
     // rosace(disque, 100, 6);
     // mosaic(image, 5);
     // tramage(photo);
@@ -732,5 +763,6 @@ int main()
     // convolutions(image);
     // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
-    // sortPixel(image);
+    // // sortPixel(image);
+    blueLevel(image2);
 }
