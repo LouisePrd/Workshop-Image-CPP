@@ -511,7 +511,7 @@ sil::Image contrast(sil::Image photoFaible, float seuil)
 
     return photoFaible;
 }
-void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
+void diffGauss(sil::Image imageBlur, sil::Image imageBlur2)
 {
     sil::Image resultGauss{imageBlur.width(), imageBlur.height()};
     float tau = 5.f;
@@ -533,7 +533,7 @@ void differencesGauss(sil::Image imageBlur, sil::Image imageBlur2)
 }
 
 // -------------- Exo 025 ***** --------------
-void triPixel(sil::Image image)
+void sortPixel(sil::Image image)
 {
     sil::Image sorted{image.width(), image.height()};
 
@@ -568,7 +568,7 @@ void triPixel(sil::Image image)
         }
     }
 
-    sorted.save("output/triPixel.png");
+    sorted.save("output/sortPixel.png");
 }
 
 // -------------- Exo 027 ***** --------------
@@ -685,7 +685,7 @@ int main()
     // mandelbrot(disque); // PERFECTIBLE
     // vortex(image); WORK IN PROGRESS
     // convolutions(image);
-    // differencesGauss(photoBlurV1, photoBlurV2);
+    // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
-    triPixel(image);
+    sortPixel(image);
 }
