@@ -112,3 +112,6 @@ Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différen
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/8f3ee4a9-f55c-4574-b4c1-67c952f0be5b" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/0a696ec3-11a0-4fd6-9559-f23e51d9517e" style="width:200px">
 ## 025 - Tri de pixels 🥑🥑🥑🥑
+Tri chaque colonne de l'image pour créer une image en fonction de la luminosité des pixels, du plus au moins lumineux.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/2c2717ad-a5e4-4628-bb38-d613deb021f3" style="width:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px">
