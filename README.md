@@ -107,7 +107,7 @@ Dans l'ordre : Emboss, Ouline, Sharpen.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/abf5d8e2-7f18-4b20-b67d-132fc8408ab5" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/8dd47b15-3dab-40c1-b9b3-fd56f695966c" style="width:200px">
 ## 024 - Différence de gaussiennes 🥑🥑
-Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différents pour mettre en avant la différence d'échelle. Le résultat a ensuite était passée en noir et blanc.<br><br>
+Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différents pour mettre en avant la différence d'échelle. Le résultat a ensuite été passé en noir et blanc.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/cfaf9c5e-b7fa-4eb0-aeaf-fb43dc7cd611" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/8f3ee4a9-f55c-4574-b4c1-67c952f0be5b" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/0a696ec3-11a0-4fd6-9559-f23e51d9517e" style="width:200px">
@@ -115,3 +115,6 @@ Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différen
 Tri chaque colonne de l'image pour créer une image en fonction de la luminosité des pixels, du plus au moins lumineux.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/2c2717ad-a5e4-4628-bb38-d613deb021f3" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px">
+## 026 - Filtre de Kuwahara 🥑🥑🥑🥑🥑
+<i>Pas terminée</i>
+## 027 - K-means🥑🥑🥑🥑🥑
