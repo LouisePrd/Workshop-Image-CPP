@@ -571,88 +571,6 @@ void sortPixel(sil::Image image)
     sorted.save("output/sortPixel.png");
 }
 
-// -------------- Exo 027 ***** --------------
-void kmeans(sil::Image image, int k)
-{
-    // Get image dimensions
-    int width = image.width();
-    int height = image.height();
-
-    // Initialize centroids
-    std::vector<glm::vec3> centroids(k);
-    for (int i = 0; i < k; i++)
-    {
-        centroids[i] = image.pixel(random_int(0, width), random_int(0, height));
-    }
-
-    // Iterate until convergence
-    bool converged = false;
-    while (!converged)
-    {
-        // Assign pixels to clusters
-        std::vector<std::vector<glm::vec3>> clusters(k);
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                glm::vec3 pixel = image.pixel(x, y);
-                int closestCentroid = 0;
-                float minDistance = glm::distance(pixel, centroids[0]);
-                for (int i = 1; i < k; i++)
-                {
-                    float distance = glm::distance(pixel, centroids[i]);
-                    if (distance < minDistance)
-                    {
-                        closestCentroid = i;
-                        minDistance = distance;
-                    }
-                }
-                clusters[closestCentroid].push_back(pixel);
-            }
-        }
-
-        // Update centroids
-        converged = true;
-        for (int i = 0; i < k; i++)
-        {
-            glm::vec3 sum(0.f);
-            for (const glm::vec3 &pixel : clusters[i])
-            {
-                sum += pixel;
-            }
-            glm::vec3 newCentroid = sum / static_cast<float>(clusters[i].size());
-            if (newCentroid != centroids[i])
-            {
-                centroids[i] = newCentroid;
-                converged = false;
-            }
-        }
-    }
-
-    // Assign new colors to pixels
-    for (int x = 0; x < width; x++)
-    {
-        for (int y = 0; y < height; y++)
-        {
-            glm::vec3 pixel = image.pixel(x, y);
-            int closestCentroid = 0;
-            float minDistance = glm::distance(pixel, centroids[0]);
-            for (int i = 1; i < k; i++)
-            {
-                float distance = glm::distance(pixel, centroids[i]);
-                if (distance < minDistance)
-                {
-                    closestCentroid = i;
-                    minDistance = distance;
-                }
-            }
-            image.pixel(x, y) = centroids[closestCentroid];
-        }
-    }
-
-    image.save("output/photo-kmeans.png");
-}
-
 // -------------- Exo 028 ***** --------------
 void kuwaharaFilter(sil::Image image)
 {
@@ -737,6 +655,88 @@ void kuwaharaFilter(sil::Image image)
         }
     }
     result.save("output/photo-kuwahara.png");
+}
+
+// -------------- Exo 027 ***** --------------
+void kmeans(sil::Image image, int k)
+{
+    // Get image dimensions
+    int width = image.width();
+    int height = image.height();
+
+    // Initialize centroids
+    std::vector<glm::vec3> centroids(k);
+    for (int i = 0; i < k; i++)
+    {
+        centroids[i] = image.pixel(random_int(0, width), random_int(0, height));
+    }
+
+    // Iterate until convergence
+    bool converged = false;
+    while (!converged)
+    {
+        // Assign pixels to clusters
+        std::vector<std::vector<glm::vec3>> clusters(k);
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                glm::vec3 pixel = image.pixel(x, y);
+                int closestCentroid = 0;
+                float minDistance = glm::distance(pixel, centroids[0]);
+                for (int i = 1; i < k; i++)
+                {
+                    float distance = glm::distance(pixel, centroids[i]);
+                    if (distance < minDistance)
+                    {
+                        closestCentroid = i;
+                        minDistance = distance;
+                    }
+                }
+                clusters[closestCentroid].push_back(pixel);
+            }
+        }
+
+        // Update centroids
+        converged = true;
+        for (int i = 0; i < k; i++)
+        {
+            glm::vec3 sum(0.f);
+            for (const glm::vec3 &pixel : clusters[i])
+            {
+                sum += pixel;
+            }
+            glm::vec3 newCentroid = sum / static_cast<float>(clusters[i].size());
+            if (newCentroid != centroids[i])
+            {
+                centroids[i] = newCentroid;
+                converged = false;
+            }
+        }
+    }
+
+    // Assign new colors to pixels
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            glm::vec3 pixel = image.pixel(x, y);
+            int closestCentroid = 0;
+            float minDistance = glm::distance(pixel, centroids[0]);
+            for (int i = 1; i < k; i++)
+            {
+                float distance = glm::distance(pixel, centroids[i]);
+                if (distance < minDistance)
+                {
+                    closestCentroid = i;
+                    minDistance = distance;
+                }
+            }
+            image.pixel(x, y) = centroids[closestCentroid];
+        }
+    }
+
+    image.save("output/photo-kmeans.png");
 }
 
 // ========== FILTRES PERSONNALISÉS ==========
