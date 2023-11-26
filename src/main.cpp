@@ -653,6 +653,92 @@ void kmeans(sil::Image image, int k)
     image.save("output/photo-kmeans.png");
 }
 
+// -------------- Exo 028 ***** --------------
+void kuwaharaFilter(sil::Image image)
+{
+    sil::Image result{image.width(), image.height()};
+    float moyenne = 0.f;
+    float moyenneR = 0.f;
+    float moyenneG = 0.f;
+    float moyenneB = 0.f;
+    float variance = 0.f;
+    float temp = 1.f;
+
+    for (int x = 0; x < image.width(); x++)
+    {
+        for (int y = 0; y < image.height(); y++)
+        {
+            // we take 9 pixels around the pixel
+            for (int i = -3; i <= 3; i++)
+            {
+                for (int j = -3; j <= 3; j++)
+                {
+                    if (x + i >= 0 && x + i < image.width() && y + j >= 0 && y + j < image.height())
+                    {
+                        // we divide the square in 4 squares of 5x5
+                        for (int k = -2; k <= 2; k++)
+                        {
+                            for (int l = -2; l <= 2; l++)
+                            {
+                                if (x + i + k >= 0 && x + i + k < image.width() && y + j + l >= 0 && y + j + l < image.height())
+                                {
+                                    moyenne += (image.pixel(x + i + k, y + j + l).r + image.pixel(x + i + k, y + j + l).g + image.pixel(x + i + k, y + j + l).b) / 3.f;
+                                }
+                            }
+                        }
+                        moyenne = moyenne / 25.f;
+
+                        // we calculate the variance of each square
+                        for (int k = -2; k <= 2; k++)
+                        {
+                            for (int l = -2; l <= 2; l++)
+                            {
+                                if (x + i + k >= 0 && x + i + k < image.width() && y + j + l >= 0 && y + j + l < image.height())
+                                {
+                                    variance += (image.pixel(x + i + k, y + j + l).r + image.pixel(x + i + k, y + j + l).g + image.pixel(x + i + k, y + j + l).b) / 3.f - moyenne;
+                                    variance = variance * variance;
+                                }
+                            }
+                        }
+                        variance = variance / 25.f;
+
+                        // we keep the square with the lowest variance
+                        if (variance < temp)
+                        {
+                            temp = variance;
+                            moyenneR = 0;
+                            moyenneG = 0;
+                            moyenneB = 0;
+
+                            // we calculate the average of the square with the lowest variance
+                            for (int k = -2; k <= 2; k++)
+                            {
+                                for (int l = -2; l <= 2; l++)
+                                {
+                                    if (x + i + k >= 0 && x + i + k < image.width() && y + j + l >= 0 && y + j + l < image.height())
+                                    {
+                                        moyenneR += image.pixel(x + i + k, y + j + l).r;
+                                        moyenneG += image.pixel(x + i + k, y + j + l).g;
+                                        moyenneB += image.pixel(x + i + k, y + j + l).b;
+                                    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // we put the average of the square with the lowest variance in the pixel
+            result.pixel(x, y) = {moyenneR / 25.f, moyenneG / 25.f, moyenneB / 25.f};
+            moyenne = 0.f;
+            variance = 0.f;
+            temp = 1.f;
+        }
+    }
+    result.save("output/photo-kuwahara.png");
+}
+
 // ========== FILTRES PERSONNALISÉS ==========
 
 // -------------- A - Circle Wave --------------
@@ -720,19 +806,19 @@ void funColor(sil::Image image)
             {
                 result.pixel(x, y) = {0, 0, 0.9};
                 result.pixel(x + image.width(), y) = {0.9, 0, 0};
-                result.pixel(x + image.width()*2, y) = {0, 0.9, 0};
+                result.pixel(x + image.width() * 2, y) = {0, 0.9, 0};
             }
             else if (image.pixel(x, y).b >= seuil)
             {
                 result.pixel(x, y) = {0, 1, 1};
                 result.pixel(x + image.width(), y) = {1, 0, 1};
-                result.pixel(x + image.width()*2, y) = {1, 1, 0};
+                result.pixel(x + image.width() * 2, y) = {1, 1, 0};
             }
             else
             {
                 result.pixel(x, y) = {0, 0.5, 0.9};
                 result.pixel(x + image.width(), y) = {0.9, 0.5, 0};
-                result.pixel(x + image.width()*2, y) = {0, 0.8, 0.5};
+                result.pixel(x + image.width() * 2, y) = {0, 0.8, 0.5};
             }
         }
     }
@@ -775,6 +861,7 @@ int main()
     // diffGauss(photoBlurV1, photoBlurV2);
     // kmeans(photo, 2); // could be 2, 3, or 16
     // sortPixel(image);
-    funColor(image2);
-    // circleWave(disque, 130, 6);
+    // funColor(image2);
+    // circleWave(disque, 130, 1);
+    kuwaharaFilter(photo);
 }
