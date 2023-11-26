@@ -143,20 +143,22 @@ Tri chaque colonne de l'image pour créer une image en fonction de la luminosit�
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/2c2717ad-a5e4-4628-bb38-d613deb021f3" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px">
 <br><br>
-Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
+<i>Remarque</i> : Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
 <br><br>
 ## 026 - Filtre de Kuwahara 🥑🥑🥑🥑🥑
 Ajoute un filtre peinture à l'huile à l'image en récupérant les 3 pixels autour de chaque pixel, en les divisant en 4 zones et en prenant la moyenne de la zone avec la variance la plus faible.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/dc8002de-87ed-49f6-bcb0-3133b7426f8e" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/b3c1928c-7f7d-4774-a1aa-23fe93afa3b4" style="width:200px">
 <br><br>
+<i>Remarque</i> : Nous avons eu beaucoup de difficultés avec ce filtre, en effet nous avons tout supprimé et tout recommencé plusieurs fois chacune de notre côté. On se perdait souvent dans les boucles car pour chaque pixel, il fallait prendre les 9 autour et dans ces 9, les séparer en deux 5x5 pour pouvoir les parcourir et faire les calculs. De plus, nous avons quelques difficultés en maths donc au départ nous avions fait la moyenne et non la variance, on avait emmelé nos pinceaux. Finalement, nous avons obtenu le résultat ci-dessous qui varie légèrement du résultat sur le sujet mais c'est celui qui s'en rapproche le plus possible dans nos essais et il garde l'idée de peinture à l'huile.
+<br><br>
 ## 027 - K-means🥑🥑🥑🥑🥑
 Créé une image en fontion des k couleurs les plus représentatives de l'image. Ici 2, 3 et 16 couleurs.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/aa2171dc-849e-49a7-99ac-c78d6b2f6db7" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/51b2c47b-2157-4051-bafa-991269f2d86d" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/be008e2b-ee64-4b87-a90d-0cbb6304d1a2" style="width:200px">
-<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/e4364644-a082-4510-9c44-84ff147b8f5e" style="width:200px"><br><br>
-
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/e4364644-a082-4510-9c44-84ff147b8f5e" style="width:200px">
+<br><br>
 
 # Effets customs
 
