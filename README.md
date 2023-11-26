@@ -100,6 +100,8 @@ Ajoute du glitch sur l'image de manière random.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/31482a8c-8e4b-4cf5-a7e2-290ffb6b8015" style="width:200px">
 <br><br>
+<i>Remarque</i> : Pour cet effet, la fonction `random_int();` a été utilisée plusieurs fois pour produire un glitch le plus aléatoire possible : à la fois pour le nombre de glitch, pour les coordonnées des pixels qu'on modifie mais aussi pour la taille et la hauteur de chaque glitch.
+<br><br>
 ## 017 - Fractale de Mandelbrot 🥑🥑🥑
 Génère une fractale de Mandelbrot, un concept mathématique découvert par Gaston Julia et Pierre Fatou.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/50ffee54-c054-4ed5-bee8-9281f1c30fcf" style="width:300px">
