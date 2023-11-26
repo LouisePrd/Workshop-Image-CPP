@@ -82,7 +82,8 @@ Créé une succession de cercles formant une rosace.<br><br>
 ## 014 - Mosaïque 🥑🥑
 Créé la mosaïque de l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
-<img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/5d6d2c23-811c-4fde-809a-4b00fae0dddf" style="width:200px">
+<img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/5d6d2c23-811c-4fde-809a-4b00fae0dddf" style="width:200px"><br><br>
+Pour créer cette mosaïque, il fallait parcourir tous les pixels puis séparer l'image finale en fonction du nombre choisi. Au départ, c'était assez facile mais la difficulté a augmenté au fur et à mesure des boucles car il fallait raisonner à la fois en global et en spécifique pour chaque image. On s'est perdues plusieurs fois mais en posant à plat nos idées, on a pu avoir plus de recul et réussir à produire le résultat final.
 <br><br>
 ## 015 - Mosaïque miroir 🥑🥑🥑
 Inverse une image sur deux sur le résultat de la mosaïque.<br><br>
@@ -111,7 +112,8 @@ Modifie chaque pixel en fonction du pixel le plus lumineux de l'image et le moin
 <br><br>
 ## 021 - Convolutions 🥑🥑🥑🥑
 Transforme l'image en lui appliquant une convolution, c'est-à-dire une opération qui va ajouter un effet sur l'image en fonction d'un kernel donné.<br><br>
-<img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/79d4f2e4-5b22-4046-a1e1-e8cda6b8e5ed" style="width:200px">
+<img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/79d4f2e4-5b22-4046-a1e1-e8cda6b8e5ed" style="width:200px"><br><br>
+<i>Remarque</i> : La difficulté de l'exercice a résidé dans la compréhension du fonctionnement du kernel car il y avait de nombreuses erreurs (dépassement de l'image, pixels en double etc.) donc il a fallu se replonger dans les matrices. Finalement, après avoir fait en sorte que cela marche pour 1 matrice de 3 par 3, il y a eu de nombreuses itérations pour adapter le code à toutes les tailles.
 <br><br>
 ## 022 - Netteté, Contours, etc. 🥑
 Applique différents kernels pour avoir plusieurs effets.<br>
@@ -124,7 +126,8 @@ Dans l'ordre : Emboss, Ouline, Sharpen.<br><br>
 Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différents pour mettre en avant la différence d'échelle. Le résultat a ensuite été passé en noir et blanc.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/cfaf9c5e-b7fa-4eb0-aeaf-fb43dc7cd611" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/8f3ee4a9-f55c-4574-b4c1-67c952f0be5b" style="width:200px">
-<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/0a696ec3-11a0-4fd6-9559-f23e51d9517e" style="width:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/0a696ec3-11a0-4fd6-9559-f23e51d9517e" style="width:200px"><br><br>
+<i>Remarque</i> : Pour cet algorithme, nous avons beaucoup tatonné car nous avions récupéré la formule de la vidéo et le résultat était loin de celui attendu. Après avoir réécrit le code de différentes façons, nous avons finalement joué avec ce paramètre avant de réaliser que le souci venait de là, le code était bon et après l'avoir passée en noir et blanc on a enfin eu un résultat similaire.
 <br><br>
 ## 025 - Tri de pixels 🥑🥑🥑🥑
 Tri chaque colonne de l'image pour créer une image en fonction de la luminosité des pixels, du plus au moins lumineux.<br><br>
