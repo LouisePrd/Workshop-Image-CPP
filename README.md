@@ -146,7 +146,9 @@ Tri chaque colonne de l'image pour créer une image en fonction de la luminosit�
 Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
 <br><br>
 ## 026 - Filtre de Kuwahara 🥑🥑🥑🥑🥑
-<i>Pas terminée</i>
+Ajoute un filtre peinture à l'huile à l'image en récupérant les 3 pixels autour de chaque pixel, en les divisant en 4 zones et en prenant la moyenne de la zone avec la variance la plus faible.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/dc8002de-87ed-49f6-bcb0-3133b7426f8e" style="width:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/b3c1928c-7f7d-4774-a1aa-23fe93afa3b4" style="width:200px">
 <br><br>
 ## 027 - K-means🥑🥑🥑🥑🥑
 Créé une image en fontion des k couleurs les plus représentatives de l'image. Ici 2, 3 et 16 couleurs.<br><br>
