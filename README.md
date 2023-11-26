@@ -83,7 +83,7 @@ Créé une succession de cercles formant une rosace.<br><br>
 Créé la mosaïque de l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/5d6d2c23-811c-4fde-809a-4b00fae0dddf" style="width:200px"><br><br>
-Pour créer cette mosaïque, il fallait parcourir tous les pixels puis séparer l'image finale en fonction du nombre choisi. Au départ, c'était assez facile mais la difficulté a augmenté au fur et à mesure des boucles car il fallait raisonner à la fois en global et en spécifique pour chaque image. On s'est perdues plusieurs fois mais en posant à plat nos idées, on a pu avoir plus de recul et réussir à produire le résultat final.
+<i>Remarque</i> : Pour créer cette mosaïque, il fallait parcourir tous les pixels puis séparer l'image finale en fonction du nombre choisi. Au départ, c'était assez facile mais la difficulté a augmenté au fur et à mesure des boucles car il fallait raisonner à la fois en global et en spécifique pour chaque image. On s'est perdues plusieurs fois mais en posant à plat nos idées, on a pu avoir plus de recul et réussir à produire le résultat final.
 <br><br>
 ## 015 - Mosaïque miroir 🥑🥑🥑
 Inverse une image sur deux sur le résultat de la mosaïque.<br><br>
