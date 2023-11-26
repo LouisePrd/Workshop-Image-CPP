@@ -51,7 +51,8 @@ Crée du bruit aléatoire sur l'image.<br><br>
 ## 008 - Rotation de 90° 🥑🥑
 Réecris les pixels de l'image comme s'ils subissaient une rotation à 90° sur une nouvelle image au format correct.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
-<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/708fd598-f43f-4452-b847-e01be4b18641" style="height:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/708fd598-f43f-4452-b847-e01be4b18641" style="height:200px"><br><br>
+Cette modification d'image semble simple en théorie mais on a tatonné avant d'y parvenir. En effet, au départ nous pensions juste que les x devenaient des y et vice versa mais ce n'était pas le cas, pour la réussir nous avons dû dessiner plusieurs exemples sur papier et cela nous a beaucoup aidées à visualiser les changements à opérer.
 <br><br>
 ## 009 - RGB Split 🥑🥑
 Modifie chaque pixel de sorte qu'il prenne le rouge du pixel à sa droite, garde son propre vert, et prenne le bleu du pixel à sa gauche.<br><br>
@@ -132,7 +133,8 @@ Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différen
 ## 025 - Tri de pixels 🥑🥑🥑🥑
 Tri chaque colonne de l'image pour créer une image en fonction de la luminosité des pixels, du plus au moins lumineux.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/2c2717ad-a5e4-4628-bb38-d613deb021f3" style="width:200px">
-<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px"><br><br>
+Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
 <br><br>
 ## 026 - Filtre de Kuwahara 🥑🥑🥑🥑🥑
 <i>Pas terminée</i>
