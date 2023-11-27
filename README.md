@@ -310,7 +310,6 @@ for (int k = -2; k <= 2; k++)
         }
     }
 }
-variance = variance / 25.f;
 ```
 
 ## 027 - K-means🥑🥑🥑🥑🥑
