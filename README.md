@@ -21,27 +21,76 @@ Liste d'exercices, plus ou moins difficiles et le but est d'en faire le maximum.
 Retire le bleu et le rouge de chaque couleur présente sur l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/cb5763a9-eb28-4450-9cf0-84705c4efc08" style="width:200px">
-<br><br>
+
+**Code**
+```c++
+for (glm::vec3 &color : image.pixels())
+{
+    color.b = 0.f;
+    color.r = 0.f;
+}
+```
+
 ## 002 - Échanger les canaux 🥑
 Échange les valeurs de bleu et les valeurs de rouge de l'image grâce à la fonction swap.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/950f26f5-8b92-4e97-9292-fe73c00686d6" style="width:200px">
-<br><br>
+
+**Code**
+```c++
+for (glm::vec3 &color : image.pixels())
+{
+    std::swap(color.r, color.b);
+}
+```
+
 ## 003 - Noir & Blanc 🥑
 Transforme les couleurs en nuances de gris.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/bc3f0fb1-cec1-42a9-ab86-4c72052d43a9" style="width:200px">
-<br><br>
+
+**Code**
+```c++
+for (glm::vec3 &color : image.pixels())
+{
+    float greyLevel = (color.r + color.g + color.b) / 3;
+    glm::vec3 newcolor(greyLevel);
+    color = newcolor;
+}
+```
+
 ## 004 - Négatif 🥑
 Inverse les valeurs des couleurs.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/37ddfc6c-21c6-4be7-9ce1-1a99746f7fb0" style="width:200px">
-<br><br>
+
+**Code**
+```c++
+for (glm::vec3 &color : image.pixels())
+{
+    color.r = 1.f - color.r;
+    color.g = 1.f - color.g;
+    color.b = 1.f - color.b;
+}
+```
+
 ## 005 - Dégradé 🥑
 Crée un dégradé de noir à blanc sur une image vide.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/3d7a6a69-0cf9-4caa-a1ea-928bdfed2a0d" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/2ba19127-9cb2-453b-8a9f-e4f2227c4ebc" style="width:200px">
-<br><br>
+
+**Code**
+```c++
+for (int x = 0; x < image.width(); x++)
+{
+    for (int y = 0; y < image.height(); y++)
+    {
+        float value = static_cast<float>(x) / static_cast<float>(image.width());
+        image.pixel(x, y) = glm::vec3(value);
+    }
+}
+```
+
 ## 006 - Miroir 🥑🥑
 Inverse les pixels de l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
@@ -263,10 +312,23 @@ Prend une image, la simplifie avec un système de seuil et la décline en 3 coul
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/9e2e9a65-09e8-4a6b-85dc-efd2474316ea" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/09d78b87-b3b2-49ef-926c-0a616e593518" style="width:600px">
 
+**Traitement du rouge**
+```c++
+if (image.pixel(x, y).r <= seuil)
+{
+    result.pixel(x, y) = {0, 0, 0.9};
+    result.pixel(x + image.width(), y) = {0.9, 0, 0};
+    result.pixel(x + image.width()*2, y) = {0, 0.9, 0};
+}
+```
+
 ## ✨ Circle Wave
 Génère une série de vagues à partir d'un cercle et de ses arctangentes.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/2494ec40-a616-4825-9854-87f56920c85d" style="width:300px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/bd4cd90d-2945-45c2-8f41-5bc784e4d37f" style="width:300px">
+
+> [!NOTE]
+> À gauche, on divise le PI utilisé pour chaque angle par 6. À droite, on ne les divise pas.
 
 ## ✨ Fringe
 Alterne les colonnes de pixel pour les décaler vers le haut ou vers le bas en alternance. Pourrait être aussi à l'horizontal, vers la gauche et vers la droite.<br><br>
@@ -303,3 +365,16 @@ Pixelise l'image sélectionnée au degré souhaité.<br><br>
 > [!NOTE]
 > Nous réalisons une moyenne des pixels pour rendre leurs couleurs de plus en plus approximatives.
 
+**Exemple d'une boucle :**
+```c++
+for (int y = 0; y < sizeH; y++)
+{
+    int coordX = x + (i * sizeW);
+    int coordY = y + (j * sizeH);
+
+    moyenneR += image.pixel(coordX, coordY).r;
+    moyenneG += image.pixel(coordX, coordY).g;
+    moyenneB += image.pixel(coordX, coordY).b;
+    nbPixel++;
+}
+```
