@@ -58,6 +58,7 @@ Crée du bruit aléatoire sur l'image.<br><br>
 > [!TIP]
 > <b>Importer</b>
 ```#include "random.hpp"```
+
 ## 008 - Rotation de 90° 🥑🥑
 Réecrit les pixels de l'image comme s'ils subissaient une rotation à 90° sur une nouvelle image au correct format.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
@@ -162,6 +163,7 @@ float white = 0.1;
 <i>Pas terminée</i>
 
 ## 019 - Tramage 🥑🥑🥑(🥑)
+Génère un tramage de la photo.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/f020e48f-3b44-4492-bbfe-fe51211c7b5b" style="width:300px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/ad790dd8-f065-44cc-9607-53beabf6f4c7" style="width:300px">
 
@@ -252,11 +254,52 @@ Créé une image en fontion des k couleurs les plus représentatives de l'image.
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/51b2c47b-2157-4051-bafa-991269f2d86d" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/be008e2b-ee64-4b87-a90d-0cbb6304d1a2" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/e4364644-a082-4510-9c44-84ff147b8f5e" style="width:200px">
-<br><br>
 
-# Effets customs
 
-## Fun Color
+# 🎨 Effets customs
+
+## ✨ Fun Color
 Prend une image, la simplifie avec un système de seuil et la décline en 3 couleurs (r, g, b) en style Pop Art.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/9e2e9a65-09e8-4a6b-85dc-efd2474316ea" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/09d78b87-b3b2-49ef-926c-0a616e593518" style="width:600px">
+
+## ✨ Circle Wave
+Génère une série de vagues à partir d'un cercle et de ses arctangentes.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/2494ec40-a616-4825-9854-87f56920c85d" style="width:300px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/bd4cd90d-2945-45c2-8f41-5bc784e4d37f" style="width:300px">
+
+## ✨ Fringe
+Alterne les colonnes de pixel pour les décaler vers le haut ou vers le bas en alternance. Pourrait être aussi à l'horizontal, vers la gauche et vers la droite.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c0a35231-835a-4dcd-b6cb-cb80c63489c0" style="width:200px">
+
+**Code**
+```c++
+int width = image.width();
+int height = image.height();
+sil::Image glitched{width, height};
+for (int x = 0; x < width; x++)
+{
+    int offset = random_int(-20, 20);
+    for (int y = 0; y < height; y++)
+    {
+        if (x + offset < width && x + offset >= 0)
+        {
+            glitched.pixel(x, y) = image.pixel(x + offset, y);
+        }
+        else
+        {
+            glitched.pixel(x, y) = image.pixel(x, y);
+        }
+    }
+}
+```
+
+## ✨ Pixelate
+Pixelise l'image sélectionnée au degré souhaité.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/f020e48f-3b44-4492-bbfe-fe51211c7b5b" style="width:300px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/fb8798e8-59c1-4334-86f9-35217e4a6cd8" style="width:300px">
+
+> [!NOTE]
+> Nous réalisons une moyenne des pixels pour rendre leurs couleurs de plus en plus approximatives.
+
