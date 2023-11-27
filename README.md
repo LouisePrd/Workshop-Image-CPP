@@ -1,7 +1,7 @@
 # Workshop - Image Manipulation
-
-Une semaine de workshop en binôme pour apprendre à coder des effets sur des images et première introduction à certains concepts de synthèse d'image.
-<br>Repo des consignes et exercices : https://dsmte.github.io/Learn--cpp_programming/Workshop
+Workshop de : [Jules Fouchy](https://github.com/JulesFouchy) <br>
+Une semaine de workshop en binôme pour apprendre à coder des effets sur des images et première introduction à certains concepts de synthèse d'image.<br>
+👉 [Consignes & Exercices](https://dsmte.github.io/Learn--cpp_programming/Workshop)
 
 ## Attendus
 
@@ -47,16 +47,21 @@ Inverse les pixels de l'image.<br><br>
 Crée du bruit aléatoire sur l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/ea7f77c0-1e66-44d7-a005-7b80da8f1360" style="width:200px">
-<br><br>
-<i>Remarque</i> : Cette fonction nous a permis d'appréhender la notion de random donc nous avons dû lire la documentation pour bien la maitriser et ainsi bruiter l'image. Il ne fallait pas bruiter chaque pixel donc il a fallu définir un nombre de pixel à modifier, ici on a choisi de prendre la moitié des pixels.
-<br><br>
+
+> [!NOTE]
+> Cette fonction nous a permis d'appréhender la notion de <b>random</b> donc nous avons dû lire la documentation pour bien la maitriser et ainsi bruiter l'image. Il ne fallait pas bruiter chaque pixel donc il a fallu définir un nombre de pixel à modifier, ici on a choisi de prendre la moitié des pixels.<br>
+
+> [!TIP]
+> <b>Importer</b>
+```#include "random.hpp"```
 ## 008 - Rotation de 90° 🥑🥑
-Réecris les pixels de l'image comme s'ils subissaient une rotation à 90° sur une nouvelle image au format correct.<br><br>
+Réecrit les pixels de l'image comme s'ils subissaient une rotation à 90° sur une nouvelle image au correct format.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/708fd598-f43f-4452-b847-e01be4b18641" style="height:200px">
-<br><br>
-<i>Remarque</i> : Cette modification d'image semble simple en théorie mais on a tatonné avant d'y parvenir. En effet, au départ nous pensions juste que les x devenaient des y et vice versa mais ce n'était pas le cas, pour la réussir nous avons dû dessiner plusieurs exemples sur papier et cela nous a beaucoup aidées à visualiser les changements à opérer.
-<br><br>
+
+> [!NOTE]
+> Cette modification d'image semble simple en théorie mais on a tatonné avant d'y parvenir. En effet, au départ nous pensions juste que les x devenaient des y et vice versa mais ce n'était pas le cas, pour la réussir nous avons dû dessiner plusieurs exemples sur **papier** et cela nous a beaucoup aidées à visualiser les changements à opérer.
+
 ## 009 - RGB Split 🥑🥑
 Modifie chaque pixel de sorte qu'il prenne le rouge du pixel à sa droite, garde son propre vert, et prenne le bleu du pixel à sa gauche.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
@@ -66,46 +71,89 @@ Modifie chaque pixel de sorte qu'il prenne le rouge du pixel à sa droite, garde
 Augmente la luminosité de l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/f020e48f-3b44-4492-bbfe-fe51211c7b5b" style="width:300px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/351e1d51-6bef-4616-879b-d8acf2ffc5a6" style="width:300px">
-<br><br>
+
+> [!NOTE]
+> Nous avons choisi de multiplier chaque valeur de couleur par 1.5. Une autre méthode utilisable est d'utiliser les puissances grâce à la fonction ```pow()```
+
 ## 011 - Disque 🥑🥑
-Création d'un disque blanc sur fond noir<br><br>
-<i>à ajouter</i>
-<br><br>
+Crée d'un disque blanc sur fond noir.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/af84390d-0a96-4470-a0d6-bee282559599" style="width:300px">
+> [!TIP]
+> 1) Enregistrer les coordonnées du centre de l'image.
+> 2) Tracer un cercle d'un rayon r en entrée.
+> 3) Consulter chaque pixel de l'image. S'il se trouve dans la zone du cercle, le peindre en blanc.
+
 ## 012 - Cercle 🥑🥑
 Créé un cercle blanc sur fond noir<br><br>
-<i>à ajouter</i>
-<br><br>
-## 012 - Cercle 🥑🥑
-Créé un cercle blanc sur fond noir<br><br>
-<i>à ajouter</i>
-<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6dcdaf4-e9f4-43ff-b209-61ffed38902d" style="width:300px">
+> [!NOTE]
+> Nous avons répété l'opération de l'exercice 012 en ne peignant en blanc que le périmètre du cercle, dont l'épaisseur est définie par une nouvelle variable en entrée : `thickness`
+
+> [!TIP]
+> Faire de la fonction `createCircle()` une fonction **réutilisable** plusieurs fois sur la même image. Ce sera très important pour notre exercice 013 👇
+
 ## 013 - Rosace 🥑🥑🥑
-Créé une succession de cercles formant une rosace.<br><br>
-<i>à ajouter</i>
-<br><br>
+Crée une succession de cercles formant une rosace.<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/867ca484-2b49-40f4-a036-b98a561b2f2a" style="width:300px">
+> [!NOTE]
+> Nous avons fait appel à `M_PI` pour calculer l'angle de chaque cercle puis les fonctions `cos(angle)` et `sin(angle)` pour en stocker les position x et y. Notre fonction prend trois variable en entrée : l'image, le rayon r commun à tous les cercles, et le nombre n de cercles _(sur l'exemple, 6 cercles sont tracés)._
+
+```c++
+void rosace(sil::Image disque, int r, int n)
+{
+    int x0 = disque.width() / 2;
+    int y0 = disque.height() / 2;
+    for (int i = 0; i < n; i++)
+    {
+        float angle = 2 * M_PI * i / n;
+        int x = x0 + r * cos(angle);
+        int y = y0 + r * sin(angle);
+        disque = createCircle(disque, x, y, 130, 3);
+    }
+    disque.save("output/rosace.png");
+}
+```
+
 ## 014 - Mosaïque 🥑🥑
-Créé la mosaïque de l'image.<br><br>
+Crée la mosaïque de l'image.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/5d6d2c23-811c-4fde-809a-4b00fae0dddf" style="width:200px">
-<br><br>
-<i>Remarque</i> : Pour créer cette mosaïque, il fallait parcourir tous les pixels puis séparer l'image finale en fonction du nombre choisi. Au départ, c'était assez facile mais la difficulté a augmenté au fur et à mesure des boucles car il fallait raisonner à la fois en global et en spécifique pour chaque image. On s'est perdues plusieurs fois mais en posant à plat nos idées, on a pu avoir plus de recul et réussir à produire le résultat final.
-<br><br>
+> [!NOTE]
+> Pour créer cette mosaïque, il fallait parcourir tous les pixels puis **séparer l'image finale** en fonction du nombre choisi. Au départ, c'était assez facile mais la difficulté a augmenté au fur et à mesure des boucles car il fallait raisonner à la fois en global et en spécifique pour chaque image. On s'est perdues plusieurs fois mais en posant à plat nos idées, on a pu avoir plus de recul et réussir à produire le résultat final.
+
 ## 015 - Mosaïque miroir 🥑🥑🥑
 Inverse une image sur deux sur le résultat de la mosaïque.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/5d6d2c23-811c-4fde-809a-4b00fae0dddf" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/3ffc6596-fd15-427e-88c2-be1692505daf" style="width:200px">
-<br><br>
+
 ## 016 - Glitch 🥑🥑🥑
 Ajoute du glitch sur l'image de manière random.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/c6d09cd4-92ce-4eb0-810c-ea96e6ab4f73" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/31482a8c-8e4b-4cf5-a7e2-290ffb6b8015" style="width:200px">
-<br><br>
-<i>Remarque</i> : Pour cet effet, la fonction `random_int();` a été utilisée plusieurs fois pour produire un glitch le plus aléatoire possible : à la fois pour le nombre de glitch, pour les coordonnées des pixels qu'on modifie mais aussi pour la taille et la hauteur de chaque glitch.
-<br><br>
+> [!NOTE]
+> Pour cet effet, la fonction `random_int();` a été utilisée plusieurs fois pour produire un glitch le plus aléatoire possible : à la fois pour le nombre de glitch, pour les coordonnées des pixels qu'on modifie mais aussi pour la taille et la hauteur de chaque glitch.
+
 ## 017 - Fractale de Mandelbrot 🥑🥑🥑
 Génère une fractale de Mandelbrot, un concept mathématique découvert par Gaston Julia et Pierre Fatou.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/50ffee54-c054-4ed5-bee8-9281f1c30fcf" style="width:300px">
-<br><br>
+> [!NOTE]
+> Pour générer une fractale, nous nous servons de 2 nombres complexes : `c` et `z`. c réfère à la position d'un pixel) et z à notre point de départ que l'on itère en `z = z * z + c` jusqu'à ce que `std::abs(z) > 2`. Nous pouvons ensuite préciser la fractale avec de nombreux paramètres.
+
+**Exemple de paramètres :**
+```c++
+    const int max = 25;
+    const int width = disque.width();
+    const int height = disque.height();
+    const float scale = 1.5;
+    const float zoom = 0.5;
+    const float moveX = 0.0;
+    const float moveY = -0.3;
+    float white = 0.1;
+```
+> [!TIP]
+> <b>Importer</b>
+`#include <complex>`
+
 ## 018 - Vortex 🥑🥑🥑(🥑)
 <i>Pas terminée</i>
 <br><br>
