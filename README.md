@@ -9,6 +9,10 @@ Liste d'exercices, plus ou moins difficiles et le but est d'en faire le maximum.
 - Mini-soutenance optionnelle (exercice de vulgarisation) et mini-rapport à rendre
 - Le rendu se fera par groupes de 2
 
+## Sommaire
+✨ [Filtres](https://github.com/AM-XIX/workshop-image-manipulation/blob/main/README.md#filtres)<br>
+✨ [Effets Customs](https://github.com/AM-XIX/workshop-image-manipulation/blob/main/README.md#effets-customs)
+<br><br>
 # Filtres
 > [!NOTE]
 > Le nombre d'émoji indique la complexité du filtre, allant de 1 à 6.
@@ -141,14 +145,14 @@ Génère une fractale de Mandelbrot, un concept mathématique découvert par Gas
 
 **Exemple de paramètres :**
 ```c++
-    const int max = 25;
-    const int width = disque.width();
-    const int height = disque.height();
-    const float scale = 1.5;
-    const float zoom = 0.5;
-    const float moveX = 0.0;
-    const float moveY = -0.3;
-    float white = 0.1;
+const int max = 25;
+const int width = disque.width();
+const int height = disque.height();
+const float scale = 1.5;
+const float zoom = 0.5;
+const float moveX = 0.0;
+const float moveY = -0.3;
+float white = 0.1;
 ```
 > [!TIP]
 > <b>Importer</b>
@@ -156,10 +160,28 @@ Génère une fractale de Mandelbrot, un concept mathématique découvert par Gas
 
 ## 018 - Vortex 🥑🥑🥑(🥑)
 <i>Pas terminée</i>
-<br><br>
+
 ## 019 - Tramage 🥑🥑🥑(🥑)
-<i>à ajouter</i>
-<br><br>
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/f020e48f-3b44-4492-bbfe-fe51211c7b5b" style="width:300px">
+<img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/79641014/ad790dd8-f065-44cc-9607-53beabf6f4c7" style="width:300px">
+
+> [!NOTE]
+> Nous avons tramé cette photo grâce à une **matrice Bayer** de niveau 1 (4x4). La Bayer ne détecte que la luminosité des pixels, ce qui rendra l'image tramée bien plus lumineuse que son original.
+
+**Matrice Bayer 4x4**
+```c++
+const int bayer_n = 4;
+float bayer_matrix_4x4[][bayer_n] = {
+    {-0.5, 0, -0.375, 0.125},
+    {0.25, -0.25, 0.375, -0.125},
+    {-0.3125, 0.1875, -0.4375, 0.0625},
+    {0.4375, -0.0625, 0.3125, -0.1875},
+};
+```
+> [!TIP]
+> <b>Importer</b>
+`#include <glm/gtx/matrix_transform_2d.hpp>`
+
 ## 020 - Normalisation de l'histogramme 🥑🥑🥑(🥑)
 Modifie chaque pixel en fonction du pixel le plus lumineux de l'image et le moins lumineux, améliore le contratse d'une image.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/563e9d62-caa8-482a-afd2-afb6a377f47a" style="width:200px">
@@ -168,38 +190,62 @@ Modifie chaque pixel en fonction du pixel le plus lumineux de l'image et le moin
 ## 021 - Convolutions 🥑🥑🥑🥑
 Transforme l'image en lui appliquant une convolution, c'est-à-dire une opération qui va ajouter un effet sur l'image en fonction d'un kernel donné.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/79d4f2e4-5b22-4046-a1e1-e8cda6b8e5ed" style="width:200px">
-<br><br>
-<i>Remarque</i> : La difficulté de l'exercice a résidé dans la compréhension du fonctionnement du kernel car il y avait de nombreuses erreurs (dépassement de l'image, pixels en double etc.) donc il a fallu se replonger dans les matrices. Finalement, après avoir fait en sorte que cela marche pour 1 matrice de 3 par 3, il y a eu de nombreuses itérations pour adapter le code à toutes les tailles.
-<br><br>
+> [!NOTE]
+> La difficulté de l'exercice a résidé dans la compréhension du fonctionnement du kernel car il y avait de nombreuses erreurs (dépassement de l'image, pixels en double etc.) donc il a fallu se replonger dans les matrices. Finalement, après avoir fait en sorte que cela marche pour 1 matrice de 3 par 3, il y a eu de nombreuses itérations pour adapter le code à toutes les tailles.
+
+**Kernel en 3x3**
+```c++
+float kernelBlur[3][3] = {
+    {1.f / 9.f, 1.f / 9.f, 1.f / 9.f},
+    {1.f / 9.f, 1.f / 9.f, 1.f / 9.f},
+    {1.f / 9.f, 1.f / 9.f, 1.f / 9.f}};
+```
+
 ## 022 - Netteté, Contours, etc. 🥑
 Applique différents kernels pour avoir plusieurs effets.<br>
 Dans l'ordre : Emboss, Ouline, Sharpen.<br><br>
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/35effe97-acaa-44e7-aa96-82f41e17f6ef" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/abf5d8e2-7f18-4b20-b67d-132fc8408ab5" style="width:200px">
 <img src="https://github.com/LouisePrd/Workshop-Image-CPP/assets/77757761/8dd47b15-3dab-40c1-b9b3-fd56f695966c" style="width:200px">
-<br><br>
+
 ## 024 - Différence de gaussiennes 🥑🥑
 Soustrait deux images auxquelles on a appliqué deux filtres gaussiens différents pour mettre en avant la différence d'échelle. Le résultat a ensuite été passé en noir et blanc.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/cfaf9c5e-b7fa-4eb0-aeaf-fb43dc7cd611" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/8f3ee4a9-f55c-4574-b4c1-67c952f0be5b" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/0a696ec3-11a0-4fd6-9559-f23e51d9517e" style="width:200px">
-<br><br>
-<i>Remarque</i> : Pour cet algorithme, nous avons beaucoup tatonné car nous avions récupéré la formule de la vidéo et le résultat était loin de celui attendu. Après avoir réécrit le code de différentes façons, nous avons finalement joué avec ce paramètre avant de réaliser que le souci venait de là, le code était bon et après l'avoir passée en noir et blanc on a enfin eu un résultat similaire.
-<br><br>
+
+> [!NOTE]
+> Pour cet algorithme, nous avons beaucoup tatonné car nous avions récupéré la formule de la [vidéo](https://www.youtube.com/live/8rrHTtUzyZA?si=wy1fDYzmzKQ49n3U&t=72) et le résultat était loin de celui attendu. Après avoir réécrit le code de différentes façons, nous avons finalement joué avec ce paramètre avant de réaliser que le souci venait de là, le code était bon et après l'avoir passée en **noir et blanc** on a enfin eu un résultat similaire.
+
 ## 025 - Tri de pixels 🥑🥑🥑🥑
 Tri chaque colonne de l'image pour créer une image en fonction de la luminosité des pixels, du plus au moins lumineux.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/2c2717ad-a5e4-4628-bb38-d613deb021f3" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/702b0361-fbdb-4389-9bfb-991e128854e6" style="width:200px">
-<br><br>
-<i>Remarque</i> : Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
-<br><br>
+
+> [!NOTE]
+> Cet algorithme a nécessité l'utilisation de tableaux pour pouvoir trier les pixels par la suite : on utilise des tableaux de tableaux ce qui était un peu tricky pour accéder aux bonnes valeurs au bon moment. Nous avons bloqué un petit moment sur eux car nous avions oublié de vider le tableau entre chaque étape, ce qui faisait que chaque itération du tableau contenait tous les pixels de la ligne en plus des lignes précédentes : les opérations étaient longues et le résultat était donc le même qu'en entrée. En ajoutant l'étape de vidage, tout fonctionnait comme nous le souhaitions !
+
+**Gestion et vidage du tableau**
+```c++
+for (int x = 0; x < image.width(); x++)
+{
+    for (int y = 0; y < image.height(); y++)
+    {
+        pixels.push_back(image.pixel(x, y));
+    }
+    sortedPixels.push_back(pixels);
+    pixels.clear();
+}
+```
+
 ## 026 - Filtre de Kuwahara 🥑🥑🥑🥑🥑
-Ajoute un filtre peinture à l'huile à l'image en récupérant les 3 pixels autour de chaque pixel, en les divisant en 4 zones et en prenant la moyenne de la zone avec la variance la plus faible.<br><br>
+Ajoute un filtre peinture à l'huile à l'image en récupérant les 3 pixels autour de chaque pixel, en les divisant en **4 zones** et en prenant la moyenne de la zone avec la variance la plus faible.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/dc8002de-87ed-49f6-bcb0-3133b7426f8e" style="width:200px">
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/b3c1928c-7f7d-4774-a1aa-23fe93afa3b4" style="width:200px">
-<br><br>
-<i>Remarque</i> : Nous avons eu beaucoup de difficultés avec ce filtre, en effet nous avons tout supprimé et tout recommencé plusieurs fois chacune de notre côté. On se perdait souvent dans les boucles car pour chaque pixel, il fallait prendre les 9 autour et dans ces 9, les séparer en deux 5x5 pour pouvoir les parcourir et faire les calculs. De plus, nous avons quelques difficultés en maths donc au départ nous avions fait la moyenne et non la variance, on avait emmelé nos pinceaux. On avait également oublié de réinitialiser les valeurs ce qui faussait tous nos résultats mais nous avons fini par trouver cette erreur et déterminer où il fallait le faire car il y avait plusieurs boucles donc sa place était capitale.
-<br><br>
+
+> [!NOTE]
+> Nous avons eu beaucoup de difficultés avec ce filtre, en effet nous avons tout supprimé et tout recommencé plusieurs fois chacune de notre côté. On se perdait souvent dans les boucles car pour chaque pixel, il fallait prendre les 9 autour et dans ces 9, les séparer en deux 5x5 pour pouvoir les parcourir et faire les calculs. De plus, nous avons quelques difficultés en maths donc au départ nous avions fait la moyenne et non la variance, on avait emmelé nos pinceaux. On avait également oublié de réinitialiser les valeurs ce qui faussait tous nos résultats mais nous avons fini par trouver cette erreur et déterminer où il fallait le faire car il y avait plusieurs boucles donc sa place était capitale.
+
 ## 027 - K-means🥑🥑🥑🥑🥑
 Créé une image en fontion des k couleurs les plus représentatives de l'image. Ici 2, 3 et 16 couleurs.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/aa2171dc-849e-49a7-99ac-c78d6b2f6db7" style="width:200px">
