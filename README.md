@@ -297,21 +297,6 @@ Ajoute un filtre peinture à l'huile à l'image en récupérant les 3 pixels aut
 > [!NOTE]
 > Nous avons eu beaucoup de difficultés avec ce filtre, en effet nous avons tout supprimé et tout recommencé plusieurs fois chacune de notre côté. On se perdait souvent dans les boucles car pour chaque pixel, il fallait prendre les 9 autour et dans ces 9, les séparer en deux 5x5 pour pouvoir les parcourir et faire les calculs. De plus, nous avons quelques difficultés en maths donc au départ nous avions fait la moyenne et non la variance, on avait emmelé nos pinceaux. On avait également oublié de réinitialiser les valeurs ce qui faussait tous nos résultats mais nous avons fini par trouver cette erreur et déterminer où il fallait le faire car il y avait plusieurs boucles donc sa place était capitale.
 
-**Formule de la variance pour chaque carré**
-```c++
-for (int k = -2; k <= 2; k++)
-{
-    for (int l = -2; l <= 2; l++)
-    {
-        if (x + i + k >= 0 && x + i + k < image.width() && y + j + l >= 0 && y + j + l < image.height())
-        {
-            variance += (image.pixel(x + i + k, y + j + l).r + image.pixel(x + i + k, y + j + l).g + image.pixel(x + i + k, y + j + l).b) / 3.f - moyenne;
-            variance = variance * variance;
-        }
-    }
-}
-```
-
 ## 027 - K-means🥑🥑🥑🥑🥑
 Créé une image en fontion des k couleurs les plus représentatives de l'image. Ici 2, 3 et 16 couleurs.<br><br>
 <img src="https://github.com/AM-XIX/workshop-image-manipulation/assets/77757761/aa2171dc-849e-49a7-99ac-c78d6b2f6db7" style="width:200px">
